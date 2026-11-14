@@ -5,10 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TF group</title>
+    <style>
+      :root {
+       --bg: #ffffff; --text: #111111; --muted: #555555;
+       --accent: #0056b3; --line: #e5e5e5; --hover-bg: #f8f9fa;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+      header { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 100; }
+      .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+      .logo { font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); }
+      
+      .nav-menu { display: flex; list-style: none; gap: 30px; height: 100%; }
+      .nav-item { position: relative; display: flex; align-items: center; cursor: pointer; height: 100%; }
+      .nav-link { font-size: 15px; color: var(--text); font-weight: 500; padding: 10px 0; }
+      .nav-item:hover .nav-link { color: var(--accent); }
+  
+      .dropdown {
+        position: absolute; top: 80px; left: 0; background: #fff;
+        border: 1px solid var(--line); border-top: none; min-width: 250px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: none; flex-direction: column; padding: 10px 0;
+      }
+      .nav-item:hover .dropdown { display: flex; }
+      .dropdown a { padding: 12px 20px; font-size: 14px; color: var(--text); font-weight: 500; }
+      .dropdown a:hover { background: var(--hover-bg); color: var(--accent); text-decoration: none; }
+
+      .hero {
+        position: relative;
+        height: 500px;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
+        display: flex; align-items: center;
+      }
+      .hero-content { color: #fff; max-width: 600px; }
+      .hero h1 { font-size: 48px; font-weight: 400; margin-bottom: 16px; line-height: 1.1; }
+      .hero p { font-size: 18px; margin-bottom: 30px; font-weight: 300; }
+      .btn-white {
+        display: inline-block; background: #fff; color: var(--accent);
+        padding: 12px 32px; font-size: 16px; font-weight: 600; border-radius: 2px; transition: all 0.2s;
+      }
+      .btn-white:hover { background: var(--hover-bg); text-decoration: none; }
+
+      section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+      .section-title { font-size: 32px; font-weight: 400; margin-bottom: 40px; text-align: center; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+      .card { padding: 30px; border: 1px solid var(--line); transition: 0.2s; }
+      .card:hover { background: var(--hover-bg); border-color: #ccc; }
+      .card h3 { font-size: 20px; margin-bottom: 12px; color: #000; }
+      .card p { color: var(--muted); font-size: 15px; }
+
+      footer { padding: 40px 0; background: var(--hover-bg); color: var(--muted); font-size: 14px; text-align: center; }
+    </style>
   </head>
 
-BODY OF THE MAIN PAGE - START
-  
+<!-- BODY OF THE MAIN PAGE - START -->
   <body>
     
     <div>
@@ -26,6 +79,6 @@ BODY OF THE MAIN PAGE - START
     </footer>
     
   </body>
-BODY OF THE MAIN PAGE - END
+<!-- BODY OF THE MAIN PAGE - END-->
   
 </html>
