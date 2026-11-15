@@ -31,13 +31,16 @@
             background: var(--bg); 
             color: var(--text); 
             line-height: 1.6; 
-            -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов для Mac/iOS */
-            -moz-osx-font-smoothing: grayscale; /* Сглаживание для Firefox */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Утилита для скрытия языков --- */
+        .hidden { display: none !important; }
 
         /* --- HEADER И НАВИГАЦИЯ --- */
         header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); position: sticky; top: 0; z-index: 100; }
@@ -52,6 +55,7 @@
             color: var(--accent); 
         }
         
+        .nav-right { display: flex; align-items: center; gap: 30px; height: 100%; }
         .nav-menu { display: flex; list-style: none; gap: 30px; height: 100%; }
         .nav-item { position: relative; display: flex; align-items: center; cursor: pointer; height: 100%; }
         
@@ -76,10 +80,16 @@
         .dropdown a { padding: 12px 20px; font-size: 14px; color: var(--text); font-weight: 500; transition: background 0.2s; }
         .dropdown a:hover { background: var(--hover-bg); color: var(--accent); text-decoration: none; }
 
+        /* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ */
+        .lang-switch { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--line); }
+        .lang-switch span { cursor: pointer; color: var(--muted); transition: color 0.2s; }
+        .lang-switch span.active { color: var(--accent); }
+        .lang-switch span:hover { color: var(--text); }
+
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
         .hero {
             position: relative;
-            height: 550px; /* Сделал чуть выше */
+            height: 550px;
             background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
             display: flex; align-items: center;
         }
@@ -108,30 +118,9 @@
         }
         .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
 
-        /* --- КАРТОЧКИ УСЛУГ (Превью на главной) --- */
-        section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-        .section-title { 
-            font-family: var(--font-heading);
-            font-size: 32px; 
-            font-weight: 500; 
-            margin-bottom: 40px; 
-            text-align: center; 
-        }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .card { 
-            padding: 30px; 
-            border: 1px solid var(--line); 
-            transition: all 0.3s ease; 
-            border-radius: 4px;
-        }
-        .card:hover { background: var(--hover-bg); border-color: #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateY(-3px); }
-        .card h3 { font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #000; }
-        .card p { color: var(--muted); font-size: 15px; }
-
-        /* --- ФУТЕР (ИСПРАВЛЕН) --- */
+        /* --- ФУТЕР --- */
         footer { 
-            background: #0b1a2a; /* Темно-синий космический фон для футера */
+            background: #0b1a2a;
             color: #8892b0; 
             padding: 60px 0 40px; 
             font-size: 14px; 
@@ -146,13 +135,129 @@
         .footer-col p { margin-bottom: 10px; }
         .footer-col a { color: #fff; transition: color 0.2s; }
         .footer-col a:hover { color: var(--accent); }
-        .footer-bottom {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            font-size: 13px;
+        
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 40px; }
         }
-
     </style>
 </head>
+
+<!-- BODY OF THE MAIN PAGE - START -->
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">TF Technologies</div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <span class="nav-link lang-en">About Us ▾</span>
+                        <span class="nav-link lang-ru hidden">О нас ▾</span>
+                        <div class="dropdown">
+                            <a href="1_1_about_tf.html" class="lang-en">Company Overview</a>
+                            <a href="1_1_about_tf.html" class="lang-ru hidden">О компании</a>
+                            <a href="1_2_team.html" class="lang-en">Our Experience</a>
+                            <a href="1_2_team.html" class="lang-ru hidden">Наш опыт</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Делаем сам текст "Услуги" ссылкой на общую страницу -->
+                        <a href="2_services.html" class="nav-link lang-en">Services ▾</a>
+                        <a href="2_services.html" class="nav-link lang-ru hidden">Услуги ▾</a>
+                        
+                        <div class="dropdown">
+                            <a href="2_1_tf_space.html" class="lang-en">TF Space</a>
+                            <a href="2_1_tf_space.html" class="lang-ru hidden">TF космос</a>
+                            
+                            <a href="2_0_project_services.html" class="lang-en">TF facility management</a>
+                            <a href="2_0_project_services.html" class="lang-ru hidden">TF управляющая компания</a>
+                            
+                            <a href="2_00_other_services.html" class="lang-en">Other Services</a>
+                            <a href="2_00_other_services.html" class="lang-ru hidden">Другое</a>
+                        </div>
+                    </li>          
+                    <li class="nav-item">
+                        <a href="3_news.html" class="nav-link lang-en">News</a>
+                        <a href="3_news.html" class="nav-link lang-ru hidden">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="4_career.html" class="nav-link lang-en">Career</a>
+                        <a href="4_career.html" class="nav-link lang-ru hidden">Карьера</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="5_contacts.html" class="nav-link lang-en">Contacts</a>
+                        <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
+                    </li>
+                </ul>
+                <!-- Переключатель языков -->
+                <div class="lang-switch">
+                    <span id="btn-en" onclick="setLang('en')">EN</span>
+                    <span>/</span>
+                    <span id="btn-ru" class="active" onclick="setLang('ru')">RU</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="lang-en">News</h1>
+                <h1 class="lang-ru hidden">Новости</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="color: #fff; font-size: 18px; margin-bottom: 15px;">TF Technologies</div>
+                    <div>&copy; 2026 TF Technologies.</div>
+                    
+                    <div class="lang-en">Astana, Kazakhstan. 010000</div>
+                    <div class="lang-ru hidden">Астана, Казахстан. 010000</div>
+                    
+                    <div class="lang-en">All rights reserved.</div>
+                    <div class="lang-ru hidden">Все права защищены.</div>
+                </div>
+                <div class="footer-col">
+                    <p class="lang-en">Contact us:</p>
+                    <p class="lang-ru hidden">Связаться с нами:</p>
+                    <p>Email: <a href="mailto:baglan.kunafiyanov@gmail.com">baglan.kunafiyanov@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт переключения языков -->
+    <script>
+        function setLang(lang) {
+            // 1. Запоминаем выбор в памяти браузера
+            localStorage.setItem('siteLang', lang);
+
+            // 2. Меняем активный класс у кнопок
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // 3. Прячем противоположный язык и показываем выбранный
+            const hideLang = lang === 'en' ? 'ru' : 'en';
+            document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+        }
+
+        // 4. Проверяем память при загрузке страницы
+        window.onload = function() {
+            const savedLang = localStorage.getItem('siteLang') || 'ru'; // По умолчанию RU
+            setLang(savedLang);
+        }
+    </script>
+    
+</body>
+<!-- BODY OF THE MAIN PAGE - END-->
+  
+</html>
