@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TF Group | Space Technologies</title>
+    <title>TF Technologies | Space Engineering</title>
     
-    <!-- Подключение современных шрифтов Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,8 +17,6 @@
             --accent: #0056b3; 
             --line: #e5e5e5; 
             --hover-bg: #f8f9fa;
-            
-            /* Назначаем шрифты */
             --font-body: 'Inter', sans-serif;
             --font-heading: 'Montserrat', sans-serif;
         }
@@ -31,41 +28,30 @@
             background: var(--bg); 
             color: var(--text); 
             line-height: 1.6; 
-            -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов для Mac/iOS */
-            -moz-osx-font-smoothing: grayscale; /* Сглаживание для Firefox */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+        /* --- Утилита для скрытия языков --- */
+        .hidden { display: none !important; }
+
         /* --- HEADER И НАВИГАЦИЯ --- */
         header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); position: sticky; top: 0; z-index: 100; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         
-        .logo { 
-            font-family: var(--font-heading);
-            font-size: 22px; 
-            font-weight: 600; 
-            letter-spacing: 1.5px; 
-            text-transform: uppercase; 
-            color: var(--accent); 
-        }
+        .logo { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
         
+        .nav-right { display: flex; align-items: center; gap: 30px; height: 100%; }
         .nav-menu { display: flex; list-style: none; gap: 30px; height: 100%; }
         .nav-item { position: relative; display: flex; align-items: center; cursor: pointer; height: 100%; }
         
-        .nav-link { 
-            font-family: var(--font-body);
-            font-size: 15px; 
-            color: var(--text); 
-            font-weight: 500; 
-            padding: 10px 0; 
-            transition: color 0.2s;
-        }
+        .nav-link { font-family: var(--font-body); font-size: 15px; color: var(--text); font-weight: 500; padding: 10px 0; transition: color 0.2s; }
         .nav-item:hover .nav-link { color: var(--accent); }
         
-        /* ВЫПАДАЮЩЕЕ МЕНЮ */
         .dropdown {
             position: absolute; top: 80px; left: 0; background: #fff;
             border: 1px solid var(--line); border-top: none; min-width: 250px;
@@ -76,115 +62,93 @@
         .dropdown a { padding: 12px 20px; font-size: 14px; color: var(--text); font-weight: 500; transition: background 0.2s; }
         .dropdown a:hover { background: var(--hover-bg); color: var(--accent); text-decoration: none; }
 
+        /* Переключатель языков */
+        .lang-switch { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--line); }
+        .lang-switch span { cursor: pointer; color: var(--muted); transition: color 0.2s; }
+        .lang-switch span.active { color: var(--accent); }
+        .lang-switch span:hover { color: var(--text); }
+
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
         .hero {
             position: relative;
-            height: 550px; /* Сделал чуть выше */
+            height: 550px;
             background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
             display: flex; align-items: center;
         }
-        
         .hero-content { color: #fff; max-width: 700px; }
-        
-        .hero h1 { 
-            font-family: var(--font-heading);
-            font-size: 56px; 
-            font-weight: 500; 
-            letter-spacing: -0.5px;
-            margin-bottom: 20px; 
-            line-height: 1.1; 
-        }
-        
-        .hero p { 
-            font-size: 20px; 
-            margin-bottom: 40px; 
-            font-weight: 300; 
-            color: #e0e0e0;
-        }
-        
-        .btn-white {
-            display: inline-block; background: #fff; color: var(--accent);
-            padding: 14px 36px; font-size: 16px; font-weight: 600; border-radius: 2px; transition: all 0.2s;
-        }
-        .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
+        .hero h1 { font-family: var(--font-heading); font-size: 56px; font-weight: 500; letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { font-size: 20px; margin-bottom: 40px; font-weight: 300; color: #e0e0e0; }
 
-        /* --- КАРТОЧКИ УСЛУГ (Превью на главной) --- */
+        /* --- КАРТОЧКИ УСЛУГ --- */
         section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-        .section-title { 
-            font-family: var(--font-heading);
-            font-size: 32px; 
-            font-weight: 500; 
-            margin-bottom: 40px; 
-            text-align: center; 
-        }
+        .section-title { font-family: var(--font-heading); font-size: 32px; font-weight: 500; margin-bottom: 40px; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
-        .card { 
-            padding: 30px; 
-            border: 1px solid var(--line); 
-            transition: all 0.3s ease; 
-            border-radius: 4px;
-        }
+        .card { padding: 30px; border: 1px solid var(--line); transition: all 0.3s ease; border-radius: 4px; }
         .card:hover { background: var(--hover-bg); border-color: #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateY(-3px); }
-        .card h3 { font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #000; }
-        .card p { color: var(--muted); font-size: 15px; }
+        .card h3 { font-family: var(--font-heading); font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #000; }
+        .card p { color: var(--muted); font-size: 14.5px; }
 
-        /* --- ФУТЕР (ИСПРАВЛЕН) --- */
-        footer { 
-            background: #0b1a2a; /* Темно-синий космический фон для футера */
-            color: #8892b0; 
-            padding: 60px 0 40px; 
-            font-size: 14px; 
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+        /* --- ФУТЕР --- */
+        footer { background: #0b1a2a; color: #8892b0; padding: 60px 0 40px; font-size: 14px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .footer-col p { margin-bottom: 10px; }
         .footer-col a { color: #fff; transition: color 0.2s; }
         .footer-col a:hover { color: var(--accent); }
-        .footer-bottom {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            font-size: 13px;
+        
+        @media (max-width: 768px) {
+            .nav-menu { display: none; } /* Скрываем меню на мобильных */
+            .hero h1 { font-size: 40px; }
         }
-
     </style>
 </head>
-
-<!-- BODY OF THE MAIN PAGE - START -->
 <body>
     <header>
         <div class="container nav-container">
             <div class="logo">TF Technologies</div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <span class="nav-link">О нас ▾</span>
-                    <div class="dropdown">
-                        <a href="about_tf.html">О компании</a>
-                        <a href="team.html">Наш опыт</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <span class="nav-link">Услуги ▾</span>
-                    <div class="dropdown">
-                        <a href="pa.html">Обеспечение качества продукции</a>
-                        <a href="project_services.html">Проектная поддержка</a>
-                        <a href="other_services.html">Другое</a>
-                    </div>
-                </li>           
-                <li class="nav-item">
-                    <a href="news.html" class="nav-link">Новости</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contacts.html" class="nav-link">Контакты</a>
-                </li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <span class="nav-link lang-en">About Us ▾</span>
+                        <span class="nav-link lang-ru hidden">О нас ▾</span>
+                        <div class="dropdown">
+                            <a href="about_tf.html" class="lang-en">Company Overview</a>
+                            <a href="about_tf.html" class="lang-ru hidden">О компании</a>
+                            
+                            <a href="team.html" class="lang-en">Our Experience</a>
+                            <a href="team.html" class="lang-ru hidden">Наш опыт</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link lang-en">Services ▾</span>
+                        <span class="nav-link lang-ru hidden">Услуги ▾</span>
+                        <div class="dropdown">
+                            <a href="pa.html" class="lang-en">Product Assurance</a>
+                            <a href="pa.html" class="lang-ru hidden">Обеспечение качества</a>
+                            
+                            <a href="project_services.html" class="lang-en">Project Support</a>
+                            <a href="project_services.html" class="lang-ru hidden">Проектная поддержка</a>
+                            
+                            <a href="other_services.html" class="lang-en">Other Services</a>
+                            <a href="other_services.html" class="lang-ru hidden">Другое</a>
+                        </div>
+                    </li>           
+                    <li class="nav-item">
+                        <a href="news.html" class="nav-link lang-en">News</a>
+                        <a href="news.html" class="nav-link lang-ru hidden">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contacts.html" class="nav-link lang-en">Contacts</a>
+                        <a href="contacts.html" class="nav-link lang-ru hidden">Контакты</a>
+                    </li>
+                </ul>
+                <!-- Переключатель -->
+                <div class="lang-switch">
+                    <span id="btn-en" onclick="setLang('en')">EN</span>
+                    <span>/</span>
+                    <span id="btn-ru" class="active" onclick="setLang('ru')">RU</span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -192,86 +156,120 @@
     <div class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>TF космос</h1>
-                <p>Инженерные решения для успешной миссии</p>
+                <h1 class="lang-en">TF Space</h1>
+                <h1 class="lang-ru hidden">TF космос</h1>
+                
+                <p class="lang-en">Engineering solutions for a successful mission</p>
+                <p class="lang-ru hidden">Инженерные решения для успешной миссии</p>
             </div>
         </div>
     </div>
     
-    <!-- Блок с услугами (сформулировано на основе опыта) -->
+    <!-- Блок с услугами (на основе ECSS и вашего резюме) -->
     <section id="services">
         <div class="container">
-            <h2 class="section-title">Услуги и экспертиза</h2>
+            <h2 class="section-title lang-en">Services & Expertise</h2>
+            <h2 class="section-title lang-ru hidden">Услуги и экспертиза</h2>
+            
             <div class="grid">
                 
                 <!-- 1 -->
                 <div class="card">
-                    <h3>Product assurance management</h3>
-                    <p>Под</p>
+                    <h3 class="lang-en">Product Assurance Management</h3>
+                    <h3 class="lang-ru hidden">Управление Product Assurance</h3>
+                    <p class="lang-en">Development of complete PA plans and full documentation packages (DML, DPL, DMPL) compliant with ECSS for successful gate reviews.</p>
+                    <p class="lang-ru hidden">Разработка полных PA-планов и пакетов документации (DML, DPL, DMPL) по стандартам ECSS для успешного прохождения ревью.</p>
                 </div>
 
                 <!-- 2 -->
                 <div class="card">
-                    <h3>Quality assurance</h3>
-                    <p>Проведу компл.</p>
+                    <h3 class="lang-en">Quality Assurance</h3>
+                    <h3 class="lang-ru hidden">Обеспечение качества (QA)</h3>
+                    <p class="lang-en">Independent audit of project processes, management of NCRs, and verification that all hardware meets qualification standards.</p>
+                    <p class="lang-ru hidden">Независимый аудит процессов проекта, управление несоответствиями (NCR) и проверка соответствия оборудования стандартам квалификации.</p>
                 </div>
 
                 <!-- 3 -->
                 <div class="card">
-                    <h3>Dependability</h3>
-                    <p>Проверю вашу эл.</p>
+                    <h3 class="lang-en">Dependability (RAMS)</h3>
+                    <h3 class="lang-ru hidden">Надежность (RAMS)</h3>
+                    <p class="lang-en">FMEA/FMECA, reliability block diagrams (RBD), MTBF/MTTR calculations, and spares optimization using custom Python tools.</p>
+                    <p class="lang-ru hidden">FMEA/FMECA, схемы надежности (RBD), расчеты MTBF/MTTR и оптимизация запасов с помощью собственных Python-инструментов.</p>
                 </div>
 
                 <!-- 4 -->
                 <div class="card">
-                    <h3>Safety</h3>
-                    <p>Проверю статус квал.</p>
+                    <h3 class="lang-en">Safety Analysis</h3>
+                    <h3 class="lang-ru hidden">Анализ безопасности (Safety)</h3>
+                    <p class="lang-en">Fault Tree Analysis (FTA) and hazard mitigation to ensure your spacecraft operations do not pose risks to the mission.</p>
+                    <p class="lang-ru hidden">Анализ дерева отказов (FTA) и снижение рисков для гарантии того, что эксплуатация аппарата безопасна для миссии.</p>
                 </div>
 
                 <!-- 5 -->
                 <div class="card">
-                    <h3>EEE components</h3>
-                    <p>Проведу расследование инцидентов.</p>
+                    <h3 class="lang-en">EEE Components & RHA</h3>
+                    <h3 class="lang-ru hidden">EEE-компоненты и RHA</h3>
+                    <p class="lang-en">Derating analysis, EEE parts assurance, and justification of COTS alternatives with required screening for radiation environments.</p>
+                    <p class="lang-ru hidden">Анализ деградации (derating), контроль EEE-компонентов и обоснование COTS-альтернатив с необходимым скринингом для радиации.</p>
                 </div>
 
                 <!-- 6 -->
                 <div class="card">
-                    <h3>Materials, mechanical parts and processes</h3>
-                    <p>Выполню расчеты MTBF/MTTR и коэффициента г.</p>
+                    <h3 class="lang-en">Materials, Mechanical Parts & Processes</h3>
+                    <h3 class="lang-ru hidden">Материалы, механика и процессы</h3>
+                    <p class="lang-en">Assessment of DMPL, review of manufacturing dossiers, and support during AIT campaigns to prevent mechanical failures.</p>
+                    <p class="lang-ru hidden">Оценка DMPL, проверка производственных досье и поддержка на этапах сборки и испытаний (AIT) для предотвращения отказов.</p>
                 </div>
 
                 <!-- 7 -->
                 <div class="card">
-                    <h3>Software product assurance</h3>
-                    <p>Выполню расчеты MTBF/MTTR и коэффициента г.</p>
+                    <h3 class="lang-en">Software Product Assurance</h3>
+                    <h3 class="lang-ru hidden">Product Assurance для ПО</h3>
+                    <p class="lang-en">Reliability support for software, telemetry analysis, and anomaly investigation based on extensive mission control experience.</p>
+                    <p class="lang-ru hidden">Поддержка надежности ПО, анализ телеметрии и расследование аномалий на основе опыта работы в центре управления полетами.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Исправленный и красивый Футер -->
+    <!-- Футер -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="logo" style="color: #fff; font-size: 18px; margin-bottom: 15px;">TF Technologies</div>
                     <div>&copy; 2026 TF Technologies.</div>
-                    <div>Указать адрес</div>
-                    <div>Астана, Казахстан.</div> 
-                    <div>010000</div>
-                    <div>Все права защищены.</div>
+                    <div class="lang-en">Astana, Kazakhstan. 010000</div>
+                    <div class="lang-ru hidden">Астана, Казахстан. 010000</div> 
+                    <div class="lang-en">All rights reserved.</div>
+                    <div class="lang-ru hidden">Все права защищены.</div>
                 </div>
                 <div class="footer-col">
-                    <p>Связаться с нами:</p>
+                    <p class="lang-en">Contact us:</p>
+                    <p class="lang-ru hidden">Связаться с нами:</p>
                     <p>Email: <a href="mailto:baglan.kunafiyanov@gmail.com">baglan.kunafiyanov@gmail.com</a></p>
                     <p>Phone: <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
                 </div>
             </div>
         </div>
     </footer>
-    
+
+    <!-- Скрипт переключения языков -->
+    <script>
+        function setLang(lang) {
+            // Переключаем активный класс у кнопок
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Скрываем противоположный язык
+            const hideLang = lang === 'en' ? 'ru' : 'en';
+            document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
+
+            // Показываем выбранный
+            document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+        }
+    </script>
 </body>
-<!-- BODY OF THE MAIN PAGE - END-->
-  
 </html>
