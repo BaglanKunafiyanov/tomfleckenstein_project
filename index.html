@@ -237,17 +237,24 @@
     <!-- Скрипт переключения языков -->
     <script>
         function setLang(lang) {
-            // Переключаем активный класс у кнопок
+            // 1. Запоминаем выбор в памяти браузера
+            localStorage.setItem('siteLang', lang);
+
+            // 2. Меняем активный класс у кнопок
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
-            // Скрываем противоположный язык
+            // 3. Прячем противоположный язык и показываем выбранный
             const hideLang = lang === 'en' ? 'ru' : 'en';
             document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
-
-            // Показываем выбранный
             document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+        }
+
+        // 4. Проверяем память при загрузке страницы
+        window.onload = function() {
+            const savedLang = localStorage.getItem('siteLang') || 'ru'; // По умолчанию RU
+            setLang(savedLang);
         }
     </script>
     
