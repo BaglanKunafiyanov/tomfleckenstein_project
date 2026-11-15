@@ -151,8 +151,8 @@
             <div class="nav-right">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="1_about_tf.html" class="nav-link lang-en">About Us ▾</span>
-                        <a href="1_about_tf.html" class="nav-link lang-ru hidden">О нас ▾</span>
+                        <a href="1_about_tf.html" class="nav-link lang-en">About TF ▾</span>
+                        <a href="1_about_tf.html" class="nav-link lang-ru hidden">О TF ▾</span>
                         
                         <div class="dropdown">
                             <a href="1_1_about_tf.html" class="lang-en">Company Overview</a>
@@ -163,7 +163,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <!-- Делаем сам текст "Услуги" ссылкой на общую страницу -->
+                        
                         <a href="2_services.html" class="nav-link lang-en">Services ▾</a>
                         <a href="2_services.html" class="nav-link lang-ru hidden">Услуги ▾</a>
                         
@@ -191,7 +191,7 @@
                         <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
                     </li>
                 </ul>
-                <!-- Переключатель языков -->
+                
                 <div class="lang-switch">
                     <span id="btn-en" onclick="setLang('en')">EN</span>
                     <span>/</span>
@@ -201,7 +201,6 @@
         </div>
     </header>
 
-    <!-- Главный экран (Hero) -->
     <div class="hero">
         <div class="container">
             <div class="hero-content">
@@ -217,7 +216,6 @@
         </div>
     </div>
 
-    <!-- Футер -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -241,26 +239,22 @@
         </div>
     </footer>
 
-    <!-- Скрипт переключения языков -->
     <script>
         function setLang(lang) {
-            // 1. Запоминаем выбор в памяти браузера
+            
             localStorage.setItem('siteLang', lang);
-
-            // 2. Меняем активный класс у кнопок
+   
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
-            // 3. Прячем противоположный язык и показываем выбранный
             const hideLang = lang === 'en' ? 'ru' : 'en';
             document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
         }
 
-        // 4. Проверяем память при загрузке страницы
         window.onload = function() {
-            const savedLang = localStorage.getItem('siteLang') || 'ru'; // По умолчанию RU
+            const savedLang = localStorage.getItem('siteLang') || 'ru';
             setLang(savedLang);
         }
     </script>
