@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TF Group | Space Technologies</title>
+    <title>Company Overview | TF Technologies</title>
     
     <!-- Подключение современных шрифтов Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,8 +89,9 @@
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
         .hero {
             position: relative;
-            height: 550px;
-            background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
+            height: 450px;
+            /* Новая картинка: спутник над Землей (инфраструктура) */
+            background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
             display: flex; align-items: center;
         }
         
@@ -98,7 +99,7 @@
         
         .hero h1 { 
             font-family: var(--font-heading);
-            font-size: 56px; 
+            font-size: 48px; 
             font-weight: 500; 
             letter-spacing: -0.5px;
             margin-bottom: 20px; 
@@ -111,83 +112,39 @@
             font-weight: 300; 
             color: #e0e0e0;
         }
-        
-        .btn-white {
-            display: inline-block; background: #fff; color: var(--accent);
-            padding: 14px 36px; font-size: 16px; font-weight: 600; border-radius: 2px; transition: all 0.2s;
-        }
-        .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
 
-        /* --- СТИЛИ ДЛЯ ТАЙМЛАЙНА --- */
-        .timeline-section {
+        /* --- СЕКЦИЯ COMPANY OVERVIEW --- */
+        .content-section {
             padding: 80px 0;
             background: #ffffff;
-            overflow: hidden;
+        }
+        
+        .content-inner {
+            max-width: 900px;
         }
 
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* Центральная линия */
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: #2b3952; /* Темно-синий цвет линии */
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        /* Квадратики на линии */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            right: -8px;
-            background-color: #b35c00; /* Оранжевый акцент */
-            border: 2px solid #ffffff;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .timeline-left { left: 0; text-align: right; }
-        .timeline-right { left: 50%; }
-        .timeline-right::after { left: -8px; }
-
-        .timeline-year {
+        .content-title {
             font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 600;
-            color: #1a2b4c;
-            margin-bottom: 10px;
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 30px;
+            line-height: 1.2;
         }
 
-        .timeline-text {
+        .content-text {
+            font-size: 18px;
             color: var(--muted);
-            font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        /* Адаптивность для телефонов */
-        @media screen and (max-width: 768px) {
-            .timeline::after { left: 31px; }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
-            .timeline-item::after { left: 23px; }
-            .timeline-left, .timeline-right { left: 0; }
+        .content-text p {
+            margin-bottom: 24px;
+        }
+
+        .content-text strong {
+            color: var(--text);
+            font-weight: 600;
         }
 
         /* --- ФУТЕР --- */
@@ -210,12 +167,13 @@
         
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .hero h1 { font-size: 40px; }
+            .hero h1 { font-size: 36px; }
+            .content-title { font-size: 28px; }
+            .content-text { font-size: 16px; }
         }
     </style>
 </head>
 
-<!-- BODY OF THE MAIN PAGE - START -->
 <body>
     <header>
         <div class="container nav-container">
@@ -266,54 +224,43 @@
     <div class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="lang-en">Our Experience</h1>
-                <h1 class="lang-ru hidden">Наш опыт</h1>
-                
-                <p class="lang-en">Engineering solutions for a successful mission</p>
-                <p class="lang-ru hidden">Инженерные решения для успешной миссии</p>
+                <h1 class="lang-en">Company Overview</h1>
+                <h1 class="lang-ru hidden">О компании</h1>
+                <p class="lang-en">Engineering precision for the most extreme environments.</p>
+                <p class="lang-ru hidden">Инженерная точность для самых экстремальных условий.</p>
             </div>
         </div>
     </div>
 
-    <!-- СЕКЦИЯ ТАЙМЛАЙНА -->
-    <section class="timeline-section">
+    <!-- Секция с текстом -->
+    <section class="content-section">
         <div class="container">
-            <div class="timeline">
+            <div class="content-inner">
                 
-                <!-- 2026 -->
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-year lang-en">2026</div>
-                    <div class="timeline-year lang-ru hidden">2026</div>
-                    <div class="timeline-text lang-en">
-                        TF Technologies was founded in Astana to provide specialized Reliability and Product Assurance engineering for the rapidly growing Central Asian space market.
-                    </div>
-                    <div class="timeline-text lang-ru hidden">
-                        Компания TF Technologies основана в Астане для предоставления специализированных инженерных услуг по надежности и обеспечению качества для быстрорастущего космического рынка Центральной Азии.
-                    </div>
+                <!-- Английский текст -->
+                <div class="lang-en content-text">
+                    <p>
+                        <strong>TF Technologies</strong> is a specialized engineering consultancy dedicated to Reliability and Product Assurance (PA) for space programmes. Based in Astana, Kazakhstan, we bridge the gap between ambitious mission concepts and the rigorous technical realities of spaceflight.
+                    </p>
+                    <p>
+                        Our expertise spans the entire life cycle of space hardware — from design and qualification to Assembly, Integration, and Testing (AIT). We bring a unique dual perspective: the design view and the operations view of how systems fail. We don't just write documentation; we engineer confidence.
+                    </p>
+                    <p>
+                        By strictly adhering to <strong>ECSS standards</strong>, we help our clients mitigate risks, optimize component selection (including EEE and COTS), and successfully navigate critical review gates from EQSR to DRR.
+                    </p>
                 </div>
 
-                <!-- 2023 -->
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-year lang-en">2023</div>
-                    <div class="timeline-year lang-ru hidden">2023</div>
-                    <div class="timeline-text lang-en">
-                        Our founder gained extensive experience in LEO and GEO programmes, delivering full ECSS PA documentation packages and supporting major AIT campaigns.
-                    </div>
-                    <div class="timeline-text lang-ru hidden">
-                        Наш основатель получил обширный опыт в программах LEO и GEO, подготовив полные пакеты документации PA по стандартам ECSS и обеспечив поддержку крупных кампаний AIT.
-                    </div>
-                </div>
-
-                <!-- 2018 -->
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-year lang-en">2018</div>
-                    <div class="timeline-year lang-ru hidden">2018</div>
-                    <div class="timeline-text lang-en">
-                        Start of deep specialization in reliability engineering, FMEA/FMECA, and availability optimization for ground segments and satellite systems.
-                    </div>
-                    <div class="timeline-text lang-ru hidden">
-                        Начало глубокой специализации в области инжиниринга надежности, FMEA/FMECA и оптимизации доступности для наземных сегментов и спутниковых систем.
-                    </div>
+                <!-- Русский текст -->
+                <div class="lang-ru hidden content-text">
+                    <p>
+                        <strong>TF Technologies</strong> — это специализированная инженерная компания, занимающаяся обеспечением надежности и качества продукции (Product Assurance) для космических программ. Базируясь в Астане, Казахстан, мы соединяем амбициозные концепции миссий с суровыми техническими реалиями космических полетов.
+                    </p>
+                    <p>
+                        Наша экспертиза охватывает весь жизненный цикл космического оборудования — от проектирования и квалификации до сборки, интеграции и испытаний (AIT). Мы предлагаем уникальный двойной взгляд: с точки зрения проектирования и с точки зрения эксплуатации (понимание того, как системы отказывают в реальности). Мы не просто пишем документацию; мы создаем уверенность в надежности.
+                    </p>
+                    <p>
+                        Строго следуя стандартам <strong>ECSS</strong>, мы помогаем клиентам снижать риски, оптимизировать выбор компонентов (включая ЭРИ и COTS) и успешно проходить критически важные этапы ревью от EQSR до DRR.
+                    </p>
                 </div>
 
             </div>
@@ -337,7 +284,7 @@
                 <div class="footer-col">
                     <p class="lang-en">Contact us:</p>
                     <p class="lang-ru hidden">Связаться с нами:</p>
-                    <p>Email: <a href="mailto:baglan.kunafiyanov@gmail.com">baglan.kunafiyanov@gmail.com</a></p>
+                    <p>Email: <a href="mailto:info@tf-technologies.com">info@tf-technologies.com</a></p>
                     <p>Phone: <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
                 </div>
             </div>
@@ -365,6 +312,4 @@
     </script>
     
 </body>
-<!-- BODY OF THE MAIN PAGE - END-->
-  
 </html>
