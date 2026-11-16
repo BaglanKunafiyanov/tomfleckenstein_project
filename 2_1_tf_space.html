@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TF Technologies | Space Engineering</title>
+    <title>TF Space | TF Technologies</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,83 +11,80 @@
 
     <style>
         :root {
-            --bg: #ffffff; 
-            --text: #111111; 
-            --muted: #555555;
-            --accent: #0056b3; 
-            --line: #e5e5e5; 
-            --hover-bg: #f8f9fa;
-            --font-body: 'Inter', sans-serif;
-            --font-heading: 'Montserrat', sans-serif;
+            --bg: #ffffff; --text: #111111; --muted: #555555; --accent: #0056b3; --line: #e5e5e5; --hover-bg: #f8f9fa;
+            --font-body: 'Inter', sans-serif; --font-heading: 'Montserrat', sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            font-family: var(--font-body); 
-            background: var(--bg); 
-            color: var(--text); 
-            line-height: 1.6; 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-        /* --- Утилита для скрытия языков --- */
         .hidden { display: none !important; }
 
-        /* --- HEADER И НАВИГАЦИЯ --- */
+        /* --- HEADER --- */
         header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); position: sticky; top: 0; z-index: 100; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        
         .logo { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
-        
         .nav-right { display: flex; align-items: center; gap: 30px; height: 100%; }
         .nav-menu { display: flex; list-style: none; gap: 30px; height: 100%; }
         .nav-item { position: relative; display: flex; align-items: center; cursor: pointer; height: 100%; }
-        
         .nav-link { font-family: var(--font-body); font-size: 15px; color: var(--text); font-weight: 500; padding: 10px 0; transition: color 0.2s; }
         .nav-item:hover .nav-link { color: var(--accent); }
-        
-        .dropdown {
-            position: absolute; top: 80px; left: 0; background: #fff;
-            border: 1px solid var(--line); border-top: none; min-width: 250px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08); display: none; flex-direction: column; padding: 10px 0;
-            border-radius: 0 0 4px 4px;
-        }
+        .dropdown { position: absolute; top: 80px; left: 0; background: #fff; border: 1px solid var(--line); border-top: none; min-width: 250px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); display: none; flex-direction: column; padding: 10px 0; border-radius: 0 0 4px 4px; }
         .nav-item:hover .dropdown { display: flex; }
         .dropdown a { padding: 12px 20px; font-size: 14px; color: var(--text); font-weight: 500; transition: background 0.2s; }
         .dropdown a:hover { background: var(--hover-bg); color: var(--accent); text-decoration: none; }
-
-        /* Переключатель языков */
         .lang-switch { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--line); }
         .lang-switch span { cursor: pointer; color: var(--muted); transition: color 0.2s; }
         .lang-switch span.active { color: var(--accent); }
         .lang-switch span:hover { color: var(--text); }
 
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
-        .hero {
-            position: relative;
-            height: 550px;
-            background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
-            display: flex; align-items: center;
-        }
+        .hero { position: relative; height: 400px; background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover; display: flex; align-items: center; }
         .hero-content { color: #fff; max-width: 700px; }
-        .hero h1 { font-family: var(--font-heading); font-size: 56px; font-weight: 500; letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.1; }
-        .hero p { font-size: 20px; margin-bottom: 40px; font-weight: 300; color: #e0e0e0; }
+        .hero h1 { font-family: var(--font-heading); font-size: 48px; font-weight: 500; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { font-size: 20px; font-weight: 300; color: #e0e0e0; }
 
         /* --- КАРТОЧКИ УСЛУГ --- */
-        section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-        .section-title { font-family: var(--font-heading); font-size: 32px; font-weight: 500; margin-bottom: 40px; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        section { padding: 80px 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
-        .card { padding: 30px; border: 1px solid var(--line); transition: all 0.3s ease; border-radius: 4px; }
-        .card:hover { background: var(--hover-bg); border-color: #ccc; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateY(-3px); }
-        .card h3 { font-family: var(--font-heading); font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #000; }
-        .card p { color: var(--muted); font-size: 14.5px; }
+        /* Обертка для ссылки, чтобы работали тени */
+        .card-link { text-decoration: none; color: inherit; display: block; }
+        
+        .card { 
+            padding: 40px; 
+            border: 1px solid var(--line); 
+            border-radius: 4px; 
+            background: #fff; 
+            transition: all 0.3s ease; 
+            height: 100%; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .card:hover { 
+            background: var(--hover-bg); 
+            border-color: #ccc; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            transform: translateY(-5px); 
+        }
+        
+        .card h3 { 
+            font-family: var(--font-heading); 
+            font-size: 22px; 
+            font-weight: 600; 
+            color: var(--accent); 
+            margin-bottom: 16px; 
+        }
+        
+        .card p { 
+            color: var(--muted); 
+            font-size: 16px; 
+            line-height: 1.6; 
+            flex-grow: 1; 
+        }
 
         /* --- ФУТЕР --- */
         footer { background: #0b1a2a; color: #8892b0; padding: 60px 0 40px; font-size: 14px; }
@@ -97,8 +94,8 @@
         .footer-col a:hover { color: var(--accent); }
         
         @media (max-width: 768px) {
-            .nav-menu { display: none; } /* Скрываем меню на мобильных */
-            .hero h1 { font-size: 40px; }
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 36px; }
         }
     </style>
 </head>
@@ -114,7 +111,6 @@
                         <div class="dropdown">
                             <a href="1_1_about_tf.html" class="lang-en">Company Overview</a>
                             <a href="1_1_about_tf.html" class="lang-ru hidden">О компании</a>
-                            
                             <a href="1_2_team.html" class="lang-en">Our Experience</a>
                             <a href="1_2_team.html" class="lang-ru hidden">Наш опыт</a>
                         </div>
@@ -140,7 +136,6 @@
                         <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
                     </li>
                 </ul>
-                <!-- Переключатель -->
                 <div class="lang-switch">
                     <span id="btn-en" onclick="setLang('en')">EN</span>
                     <span>/</span>
@@ -150,72 +145,83 @@
         </div>
     </header>
 
-    <!-- Главный экран (Hero) -->
+    <!-- Главный экран (Hero) - Изменена картинка -->
     <div class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="lang-en">TF Space</h1>
                 <h1 class="lang-ru hidden">TF космос</h1>
-                
-                <p class="lang-en">Engineering solutions for a successful mission</p>
-                <p class="lang-ru hidden">Инженерные решения для успешной миссии</p>
+                <p class="lang-en">Reliability & Product Assurance for Space Programmes</p>
+                <p class="lang-ru hidden">Надежность и обеспечение качества для космических программ</p>
             </div>
         </div>
     </div>
     
-    <!-- Блок с услугами (на основе ECSS и вашего резюме) -->
+    <!-- Блок с услугами -->
     <section id="services">
         <div class="container">
-            
             <div class="grid">
                 
-                <!-- 1 -->
-                <div class="card">
-                    <h3 class="lang-en">Product Assurance Management</h3>
-                    <h3 class="lang-ru hidden">Управление обспечением качества продукции</h3>
-                    <p class="lang-en">Development of PA plans compliant with ECSS.</p>
-                    <p class="lang-ru hidden">Разработка PA-планов по стандартам ECSS.</p>
-                </div>
+                <!-- Карточка 1 (Пример, как это работает) -->
+                <!-- Если по этой услуге есть отдельная страница, укажите её в href="..." -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Product Assurance Management</h3>
+                        <h3 class="lang-ru hidden">Управление обеспечением качества</h3>
+                        <p class="lang-en">Development of PA plans compliant with ECSS, including full documentation packages (DML, DPL, DMPL).</p>
+                        <p class="lang-ru hidden">Разработка PA-планов по стандартам ECSS, включая полные пакеты документации (DML, DPL, DMPL).</p>
+                    </div>
+                </a>
 
-                <!-- 2 -->
-                <div class="card">
-                    <h3 class="lang-en">Quality Assurance</h3>
-                    <h3 class="lang-ru hidden">Обеспечение качества</h3>
-                    <p class="lang-en">Independent audit of project processes, management of NCRs, and verification.</p>
-                    <p class="lang-ru hidden">Независимый аудит процессов проекта, управление несоответствиями и проверка соответствия оборудования.</p>
-                </div>
+                <!-- Карточка 2 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Quality Assurance</h3>
+                        <h3 class="lang-ru hidden">Обеспечение качества (QA)</h3>
+                        <p class="lang-en">Independent audit of project processes, management of NCRs, and verification of hardware compliance.</p>
+                        <p class="lang-ru hidden">Независимый аудит процессов проекта, управление несоответствиями (NCR) и проверка соответствия оборудования.</p>
+                    </div>
+                </a>
 
-                <!-- 3 -->
-                <div class="card">
-                    <h3 class="lang-en">Dependability (RAMS)</h3>
-                    <h3 class="lang-ru hidden">Надежность</h3>
-                    <p class="lang-en">FMEA/FMECA, reliability block diagrams, MTBF/MTTR calculations, and spares optimization.</p>
-                    <p class="lang-ru hidden">FMEA/FMECA, структурная схемы надежности, расчеты среднего времени до отказа и среднего времени ремонта и оптимизация запасов.</p>
-                </div>
+                <!-- Карточка 3 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Dependability (RAMS)</h3>
+                        <h3 class="lang-ru hidden">Надежность (RAMS)</h3>
+                        <p class="lang-en">FMEA/FMECA, reliability block diagrams (RBD), MTBF/MTTR calculations, and spares optimization.</p>
+                        <p class="lang-ru hidden">FMEA/FMECA, структурные схемы надежности (RBD), расчеты MTBF/MTTR и оптимизация запасов.</p>
+                    </div>
+                </a>
 
-                <!-- 4 -->
-                <div class="card">
-                    <h3 class="lang-en">Safety Analysis</h3>
-                    <h3 class="lang-ru hidden">Анализ безопасности (Safety)</h3>
-                    <p class="lang-en">Fault Tree Analysis (FTA) and hazard mitigation.</p>
-                    <p class="lang-ru hidden">Анализ дерева отказов и снижение рисков.</p>
-                </div>
+                <!-- Карточка 4 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Safety Analysis</h3>
+                        <h3 class="lang-ru hidden">Анализ безопасности (Safety)</h3>
+                        <p class="lang-en">Fault Tree Analysis (FTA), hazard mitigation, and ensuring operational safety for the mission.</p>
+                        <p class="lang-ru hidden">Анализ дерева отказов (FTA), снижение рисков и обеспечение безопасности эксплуатации для миссии.</p>
+                    </div>
+                </a>
 
-                <!-- 5 -->
-                <div class="card">
-                    <h3 class="lang-en">EEE Components</h3>
-                    <h3 class="lang-ru hidden">ЭРИ</h3>
-                    <p class="lang-en">Derating analysis, EEE parts assurance, and justification of COTS alternatives.</p>
-                    <p class="lang-ru hidden">Анализ снижения нагрузок, контроль ЭРИ и обоснование коммерческих альтернатив ЭРИ.</p>
-                </div>
+                <!-- Карточка 5 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">EEE Components</h3>
+                        <h3 class="lang-ru hidden">ЭРИ (EEE Components)</h3>
+                        <p class="lang-en">Derating analysis, EEE parts assurance, and justification of COTS alternatives with required screening.</p>
+                        <p class="lang-ru hidden">Анализ снижения нагрузок (derating), контроль ЭРИ и обоснование коммерческих альтернатив (COTS) с необходимым скринингом.</p>
+                    </div>
+                </a>
 
-                <!-- 6 -->
-                <div class="card">
-                    <h3 class="lang-en">Materials, Mechanical Parts & Processes</h3>
-                    <h3 class="lang-ru hidden">Материалы, механические части и процессы</h3>
-                    <p class="lang-en">Assessment, review of manufacturing dossiers, and support during AIT campaigns.</p>
-                    <p class="lang-ru hidden">Оценка, проверка производственных документов и поддержка на этапах сборки и испытаний.</p>
-                </div>
+                <!-- Карточка 6 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Materials, Mechanical Parts & Processes</h3>
+                        <h3 class="lang-ru hidden">Материалы, механические части и процессы</h3>
+                        <p class="lang-en">Assessment, review of manufacturing dossiers, and support during AIT campaigns to prevent failures.</p>
+                        <p class="lang-ru hidden">Оценка, проверка производственных документов и поддержка на этапах сборки и испытаний (AIT).</p>
+                    </div>
+                </a>
 
             </div>
         </div>
@@ -245,20 +251,23 @@
         </div>
     </footer>
 
-    <!-- Скрипт переключения языков -->
+    <!-- Скрипт переключения языков (с сохранением в память) -->
     <script>
         function setLang(lang) {
-            // Переключаем активный класс у кнопок
+            localStorage.setItem('siteLang', lang);
+            
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
-            // Скрываем противоположный язык
             const hideLang = lang === 'en' ? 'ru' : 'en';
             document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
-
-            // Показываем выбранный
             document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+        }
+
+        window.onload = function() {
+            const savedLang = localStorage.getItem('siteLang') || 'ru';
+            setLang(savedLang);
         }
     </script>
 </body>
