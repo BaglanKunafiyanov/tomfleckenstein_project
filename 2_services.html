@@ -118,6 +118,56 @@
         }
         .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
 
+        section#services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card {
+            padding: 40px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: #fff;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            background: var(--hover-bg);
+            border-color: #ccc;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
         /* --- ФУТЕР --- */
         footer { 
             background: #0b1a2a;
@@ -206,15 +256,34 @@
 
     <section id="services">
         <div class="container">
-            
             <div class="grid">
                 
                 <a href="2_1_tf_space.html" class="card-link">
                     <div class="card">
                         <h3 class="lang-en">TF Space</h3>
                         <h3 class="lang-ru hidden">TF космос</h3>
-                        <p class="lang-en">Development of Product Assurance plans compliant with ECSS</p>
-                        <p class="lang-ru hidden">Разработка планов Обеспечения качества продукции по стандартам ECSS</p>
+                        <p class="lang-en">Development of Product Assurance plans compliant with ECSS, including full documentation packages (DML, DPL, DMPL).</p>
+                        <p class="lang-ru hidden">Разработка планов Обеспечения качества продукции по стандартам ECSS, включая полные пакеты документации (DML, DPL, DMPL).</p>
+                    </div>
+                </a>
+
+                <!-- Карточка 2 (Пример на будущее: Управляющая компания) -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">TF Facility Management</h3>
+                        <h3 class="lang-ru hidden">TF Управляющая компания</h3>
+                        <p class="lang-en">Comprehensive management of space infrastructure and ground segments.</p>
+                        <p class="lang-ru hidden">Комплексное управление космической инфраструктурой и наземными сегментами.</p>
+                    </div>
+                </a>
+
+                <!-- Карточка 3 (Пример на будущее: Другое) -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Other Services</h3>
+                        <h3 class="lang-ru hidden">Другие услуги</h3>
+                        <p class="lang-en">Specialized engineering consulting and technical audits for space projects.</p>
+                        <p class="lang-ru hidden">Специализированный инженерный консалтинг и технические аудиты для космических проектов.</p>
                     </div>
                 </a>
 
