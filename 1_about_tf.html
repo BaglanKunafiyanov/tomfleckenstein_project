@@ -118,7 +118,57 @@
         }
         .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
 
-       
+        section#services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card {
+            padding: 40px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: #fff;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            background: var(--hover-bg);
+            border-color: #ccc;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        
         footer { 
             background: #0b1a2a;
             color: #8892b0; 
@@ -206,6 +256,28 @@
         </div>
     </div>
 
+    <section id="services">
+        <div class="container">
+            <div class="grid">
+                
+                <a href="1_1_about_tf.html" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Company Overview</h3>
+                        <h3 class="lang-ru hidden">О компании</h3>
+                    </div>
+                </a>
+
+                <a href="1_2_team.html" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Our Experience</h3>
+                        <h3 class="lang-ru hidden">Наш опыт</h3>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    
     <!-- Футер -->
     <footer>
         <div class="container">
