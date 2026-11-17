@@ -1,346 +1,263 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TF Space | TF Technologies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TF Space | TF Technologies</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff; --text: #111111; --muted: #555555; --accent: #0056b3; --line: #e5e5e5; --hover-bg: #f8f9fa;
+            --font-body: 'Inter', sans-serif; --font-heading: 'Montserrat', sans-serif;
+        }
 
-<link rel="stylesheet" href="site.css">
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .hidden { display: none !important; }
+
+        /* --- HEADER --- */
+        header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+        .nav-right { display: flex; align-items: center; gap: 30px; height: 100%; }
+        .nav-menu { display: flex; list-style: none; gap: 30px; height: 100%; }
+        .nav-item { position: relative; display: flex; align-items: center; cursor: pointer; height: 100%; }
+        .nav-link { font-family: var(--font-body); font-size: 15px; color: var(--text); font-weight: 500; padding: 10px 0; transition: color 0.2s; }
+        .nav-item:hover .nav-link { color: var(--accent); }
+        .dropdown { position: absolute; top: 80px; left: 0; background: #fff; border: 1px solid var(--line); border-top: none; min-width: 250px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); display: none; flex-direction: column; padding: 10px 0; border-radius: 0 0 4px 4px; }
+        .nav-item:hover .dropdown { display: flex; }
+        .dropdown a { padding: 12px 20px; font-size: 14px; color: var(--text); font-weight: 500; transition: background 0.2s; }
+        .dropdown a:hover { background: var(--hover-bg); color: var(--accent); text-decoration: none; }
+        .lang-switch { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--line); }
+        .lang-switch span { cursor: pointer; color: var(--muted); transition: color 0.2s; }
+        .lang-switch span.active { color: var(--accent); }
+        .lang-switch span:hover { color: var(--text); }
+
+        /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+        .hero { position: relative; height: 450px; background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2072&auto=format&fit=crop') center/cover; display: flex; align-items: center; }
+        .hero-content { color: #fff; max-width: 700px; }
+        .hero h1 { font-family: var(--font-heading); font-size: 48px; font-weight: 500; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { font-size: 20px; font-weight: 300; color: #e0e0e0; }
+
+        /* --- КАРТОЧКИ УСЛУГ --- */
+        section { padding: 80px 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        /* Обертка для ссылки, чтобы работали тени */
+        .card-link { text-decoration: none; color: inherit; display: block; }
+        
+        .card { 
+            padding: 40px; 
+            border: 1px solid var(--line); 
+            border-radius: 4px; 
+            background: #fff; 
+            transition: all 0.3s ease; 
+            height: 100%; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .card:hover { 
+            background: var(--hover-bg); 
+            border-color: #ccc; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            transform: translateY(-5px); 
+        }
+        
+        .card h3 { 
+            font-family: var(--font-heading); 
+            font-size: 22px; 
+            font-weight: 500; 
+            color: var(--accent); 
+            margin-bottom: 16px; 
+        }
+        
+        .card p { 
+            color: var(--muted); 
+            font-size: 16px; 
+            line-height: 1.6; 
+            flex-grow: 1; 
+        }
+
+        /* --- ФУТЕР --- */
+        footer { background: #0b1a2a; color: #8892b0; padding: 60px 0 40px; font-size: 14px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+        .footer-col p { margin-bottom: 10px; }
+        .footer-col a { color: #fff; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 36px; }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="container nav-container">
+            <a href="0_index.html" class="logo" style="text-decoration: none;">TF Technologies</a>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="1_about_tf.html"  class="nav-link lang-en">About TF ▾</a>
+                        <a href="1_about_tf.html"  class="nav-link lang-ru hidden">О TF ▾</a>
+                        <div class="dropdown">
+                            <a href="1_1_about_tf.html" class="lang-en">Company Overview</a>
+                            <a href="1_1_about_tf.html" class="lang-ru hidden">О компании</a>
+                            <a href="1_2_team.html" class="lang-en">Our Experience</a>
+                            <a href="1_2_team.html" class="lang-ru hidden">Наш опыт</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="2_services.html"  class="nav-link lang-en">Services ▾</a>
+                        <a href="2_services.html"  class="nav-link lang-ru hidden">Услуги ▾</a>
+                        <div class="dropdown">
+                            <a href="2_1_tf_space.html" class="lang-en">TF Space</a>
+                            <a href="2_1_tf_space.html" class="lang-ru hidden">TF космос</a>
+                        </div>
+                    </li>           
+                    <li class="nav-item">
+                        <a href="3_news.html" class="nav-link lang-en">News</a>
+                        <a href="3_news.html" class="nav-link lang-ru hidden">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="4_career.html" class="nav-link lang-en">Career</a>
+                        <a href="4_career.html" class="nav-link lang-ru hidden">Карьера</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="5_contacts.html" class="nav-link lang-en">Contacts</a>
+                        <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
+                    </li>
+                </ul>
+                <div class="lang-switch">
+                    <span id="btn-en" onclick="setLang('en')">EN</span>
+                    <span>/</span>
+                    <span id="btn-ru" class="active" onclick="setLang('ru')">RU</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<header>
-    <div class="container nav-container">
-
-        <a href="0_index.html" class="logo" style="text-decoration:none;">
-            TF Technologies
-        </a>
-
-        <div class="nav-right">
-            <ul class="nav-menu">
-
-                <li class="nav-item">
-                    <a href="1_about_tf.html" class="nav-link lang-en">About TF ▾</a>
-                    <a href="1_about_tf.html" class="nav-link lang-ru hidden">О TF ▾</a>
-
-                    <div class="dropdown">
-                        <a href="1_1_about_tf.html" class="lang-en">Company Overview</a>
-                        <a href="1_1_about_tf.html" class="lang-ru hidden">О компании</a>
-
-                        <a href="1_2_team.html" class="lang-en">Our Experience</a>
-                        <a href="1_2_team.html" class="lang-ru hidden">Наш опыт</a>
+    <!-- Главный экран (Hero) - Изменена картинка -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="lang-en">TF Space</h1>
+                <h1 class="lang-ru hidden">TF космос</h1>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Блок с услугами -->
+    <section id="services">
+        <div class="container">
+            <div class="grid">
+                
+                <!-- Карточка 1 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Product Assurance Management</h3>
+                        <h3 class="lang-ru hidden">Управление обеспечением качества</h3>
+                        <p class="lang-en">Development of PA plans compliant with ECSS.</p>
+                        <p class="lang-ru hidden">Разработка планов обеспечения качества продукции по стандартам ECSS.</p>
                     </div>
-                </li>
+                </a>
 
-                <li class="nav-item">
-                    <a href="2_services.html" class="nav-link lang-en">Services ▾</a>
-                    <a href="2_services.html" class="nav-link lang-ru hidden">Услуги ▾</a>
-
-                    <div class="dropdown">
-                        <a href="2_1_tf_space.html" class="lang-en">TF Space</a>
-                        <a href="2_1_tf_space.html" class="lang-ru hidden">TF Space</a>
+                <!-- Карточка 2 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Quality Assurance</h3>
+                        <h3 class="lang-ru hidden">Обеспечение качества</h3>
+                        <p class="lang-en">Independent audit of project processes, management of NCRs, and verification of hardware compliance.</p>
+                        <p class="lang-ru hidden">Независимый аудит процессов проекта, управление несоответствиями и проверка соответствия оборудования.</p>
                     </div>
-                </li>
+                </a>
 
-                <li class="nav-item">
-                    <a href="3_news.html" class="nav-link lang-en">News</a>
-                    <a href="3_news.html" class="nav-link lang-ru hidden">Новости</a>
-                </li>
+                <!-- Карточка 3 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Dependability</h3>
+                        <h3 class="lang-ru hidden">Надежность</h3>
+                        <p class="lang-en">FMEA/FMECA, reliability block diagrams (RBD), MTBF/MTTR calculations, and spares optimization.</p>
+                        <p class="lang-ru hidden">АВПО/АВПКО, структурные схемы надежности, расчеты среднего времени до отказа и среднего времени ремонта и оптимизация ЗИП</p>
+                    </div>
+                </a>
 
-                <li class="nav-item">
-                    <a href="4_career.html" class="nav-link lang-en">Career</a>
-                    <a href="4_career.html" class="nav-link lang-ru hidden">Карьера</a>
-                </li>
+                <!-- Карточка 4 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Safety Analysis</h3>
+                        <h3 class="lang-ru hidden">Анализ безопасности</h3>
+                        <p class="lang-en">Fault Tree Analysis (FTA), hazard mitigation, and ensuring operational safety for the mission.</p>
+                        <p class="lang-ru hidden">Анализ дерева отказов, снижение рисков и обеспечение безопасности эксплуатации для миссии.</p>
+                    </div>
+                </a>
 
-                <li class="nav-item">
-                    <a href="5_contacts.html" class="nav-link lang-en">Contacts</a>
-                    <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
-                </li>
+                <!-- Карточка 5 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">EEE Components</h3>
+                        <h3 class="lang-ru hidden">ЭРИ</h3>
+                        <p class="lang-en">Derating analysis, EEE parts assurance, and justification of COTS alternatives.</p>
+                        <p class="lang-ru hidden">Анализ снижения нагрузок, контроль ЭРИ и обоснование коммерческих альтернатив ЭРИ.</p>
+                    </div>
+                </a>
 
-            </ul>
+                <!-- Карточка 6 -->
+                <a href="#" class="card-link">
+                    <div class="card">
+                        <h3 class="lang-en">Materials, Mechanical Parts & Processes</h3>
+                        <h3 class="lang-ru hidden">Материалы, механические части и процессы</h3>
+                        <p class="lang-en">Assessment, review of manufacturing dossiers, and support during AIT campaigns to prevent failures.</p>
+                        <p class="lang-ru hidden">Оценка, проверка производственных документов и поддержка на этапах сборки и испытаний.</p>
+                    </div>
+                </a>
 
-            <div class="lang-switch">
-                <span id="btn-en" onclick="setLang('en')">EN</span>
-                <span>/</span>
-                <span id="btn-ru" class="active" onclick="setLang('ru')">RU</span>
             </div>
         </div>
-    </div>
-</header>
+    </section>
 
-
-<!-- HERO SECTION -->
-<div class="hero">
-    <div class="container">
-        <div class="hero-content">
-
-            <h1 class="lang-en">TF Space</h1>
-            <h1 class="lang-ru hidden">TF Space</h1>
-
-            <p class="lang-en">
-                Reliability engineering and product assurance services
-                for space hardware and ground systems.
-            </p>
-
-            <p class="lang-ru hidden">
-                Услуги в области инженерии надёжности и Product Assurance
-                для космического оборудования и наземных систем.
-            </p>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- SERVICES SECTION -->
-<section id="services">
-    <div class="container">
-
-        <div class="section-intro">
-
-            <h2 class="lang-en">Engineering services</h2>
-            <h2 class="lang-ru hidden">Инженерные услуги</h2>
-
-            <p class="lang-en">
-                Focused technical services based on practical experience
-                in reliability engineering, product assurance, electronic
-                components and satellite operations. Select a service to
-                see its scope, required input documents and expected deliverables.
-            </p>
-
-            <p class="lang-ru hidden">
-                Конкретные инженерные услуги, основанные на практическом опыте
-                в области надёжности, Product Assurance, электронных компонентов
-                и эксплуатации спутников. Выберите услугу, чтобы ознакомиться
-                с её содержанием, входными документами и ожидаемыми результатами.
-            </p>
-
-        </div>
-
-
-        <div class="grid">
-
-            <!-- SERVICE 1 -->
-            <a href="2_1_1_pa_documentation.html" class="card-link">
-                <div class="card">
-
-                    <h3 class="lang-en">Product Assurance Documentation</h3>
-                    <h3 class="lang-ru hidden">Документация Product Assurance</h3>
-
-                    <p class="lang-en">
-                        Preparation and review of PA documentation for space
-                        equipment, including FMEA, DML, DPL, DMPL, PA plans
-                        and manufacturing documentation.
-                    </p>
-
-                    <p class="lang-ru hidden">
-                        Подготовка и проверка документации PA для космического
-                        оборудования: FMEA, DML, DPL, DMPL, планы PA
-                        и производственная документация.
-                    </p>
-
-                    <span class="more lang-en">Service details →</span>
-                    <span class="more lang-ru hidden">Подробнее об услуге →</span>
-
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="color: #fff; font-size: 18px; margin-bottom: 15px;">TF Technologies</div>
+                    <div>&copy; 2026 TF Technologies.</div>
+                    <div class="lang-en">Astana, Kazakhstan. 010000</div>
+                    <div class="lang-ru hidden">Астана, Казахстан. 010000</div> 
+                    <div class="lang-en">All rights reserved.</div>
+                    <div class="lang-ru hidden">Все права защищены.</div>
                 </div>
-            </a>
-
-
-            <!-- SERVICE 2 -->
-            <a href="2_1_2_reliability_analysis.html" class="card-link">
-                <div class="card">
-
-                    <h3 class="lang-en">Reliability & Availability Analysis</h3>
-                    <h3 class="lang-ru hidden">Анализ надёжности и готовности</h3>
-
-                    <p class="lang-en">
-                        FMEA/FMECA, FTA, reliability block diagrams,
-                        MTBF/MTTR and availability calculations,
-                        plus spare-parts optimisation.
-                    </p>
-
-                    <p class="lang-ru hidden">
-                        FMEA/FMECA, FTA, структурные схемы надёжности,
-                        расчёты MTBF/MTTR и готовности,
-                        а также оптимизация ЗИП.
-                    </p>
-
-                    <span class="more lang-en">Service details →</span>
-                    <span class="more lang-ru hidden">Подробнее об услуге →</span>
-
-                </div>
-            </a>
-
-
-            <!-- SERVICE 3 -->
-            <a href="2_1_3_eee_components.html" class="card-link">
-                <div class="card">
-
-                    <h3 class="lang-en">EEE Components Assessment</h3>
-                    <h3 class="lang-ru hidden">Анализ электронных компонентов (ЭРИ)</h3>
-
-                    <p class="lang-en">
-                        Derating assessment, identification of non-compliant
-                        components and technical assessment of potential
-                        COTS alternatives.
-                    </p>
-
-                    <p class="lang-ru hidden">
-                        Анализ derating, выявление компонентов,
-                        не соответствующих требованиям, и техническая
-                        оценка потенциальных COTS-альтернатив.
-                    </p>
-
-                    <span class="more lang-en">Service details →</span>
-                    <span class="more lang-ru hidden">Подробнее об услуге →</span>
-
-                </div>
-            </a>
-
-
-            <!-- SERVICE 4 -->
-            <a href="2_1_4_verification_ait.html" class="card-link">
-                <div class="card">
-
-                    <h3 class="lang-en">Verification & AIT Documentation Support</h3>
-                    <h3 class="lang-ru hidden">Поддержка верификации и AIT</h3>
-
-                    <p class="lang-en">
-                        Verification matrices, qualification-status tracking,
-                        review of evidence, NCR and action-item follow-up
-                        during integration and testing.
-                    </p>
-
-                    <p class="lang-ru hidden">
-                        Матрицы верификации, отслеживание статуса квалификации,
-                        проверка подтверждающих документов, сопровождение NCR
-                        и задач при сборке и испытаниях.
-                    </p>
-
-                    <span class="more lang-en">Service details →</span>
-                    <span class="more lang-ru hidden">Подробнее об услуге →</span>
-
-                </div>
-            </a>
-
-
-            <!-- SERVICE 5 -->
-            <a href="2_1_5_satellite_operations.html" class="card-link">
-                <div class="card">
-
-                    <h3 class="lang-en">Satellite Operations Data Analysis</h3>
-                    <h3 class="lang-ru hidden">Анализ эксплуатационных данных спутников</h3>
-
-                    <p class="lang-en">
-                        Telemetry trend analysis, identification of parameters
-                        for monitoring and engineering support for spacecraft
-                        lifetime assessment.
-                    </p>
-
-                    <p class="lang-ru hidden">
-                        Анализ трендов телеметрии, определение контролируемых
-                        параметров и инженерная поддержка оценки ресурса
-                        космического аппарата.
-                    </p>
-
-                    <span class="more lang-en">Service details →</span>
-                    <span class="more lang-ru hidden">Подробнее об услуге →</span>
-
-                </div>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- EXPERIENCE SECTION -->
-<section class="profile-strip">
-    <div class="container">
-
-        <div class="section-intro">
-            <h2 class="lang-en">Relevant professional experience</h2>
-            <h2 class="lang-ru hidden">Профессиональный опыт</h2>
-        </div>
-
-        <div class="profile-grid">
-
-            <div class="profile-item">
-                <strong>7 years</strong>
-                <span class="lang-en">of experience in the space sector</span>
-                <span class="lang-ru hidden">опыта в космической отрасли</span>
             </div>
-
-            <div class="profile-item">
-                <strong>GEO / LEO</strong>
-                <span class="lang-en">space programme experience</span>
-                <span class="lang-ru hidden">опыт работы с GEO и LEO программами</span>
-            </div>
-
-            <div class="profile-item">
-                <strong>134</strong>
-                <span class="lang-en">components assessed in a derating task</span>
-                <span class="lang-ru hidden">компонента проверено в рамках задачи derating</span>
-            </div>
-
-            <div class="profile-item">
-                <strong>~240</strong>
-                <span class="lang-en">failure modes covered in FMECA/FTA work</span>
-                <span class="lang-ru hidden">видов отказов рассмотрено в рамках FMECA/FTA</span>
-            </div>
-
         </div>
+    </footer>
 
-        <p class="note lang-en">
-            Figures refer to specific assignments in the engineer’s
-            professional experience. They are not company-wide performance
-            metrics. Project references describe individual contributions
-            and do not imply that TF Technologies acted as prime contractor.
-        </p>
+    <!-- Скрипт переключения языков (с сохранением в память) -->
+    <script>
+        function setLang(lang) {
+            localStorage.setItem('siteLang', lang);
+            
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-ru').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
 
-        <p class="note lang-ru hidden">
-            Показатели относятся к конкретным задачам из профессионального
-            опыта специалиста и не являются общей статистикой компании.
-            Упоминания проектов описывают личный вклад специалиста и не означают,
-            что TF Technologies выступала генеральным подрядчиком.
-        </p>
+            const hideLang = lang === 'en' ? 'ru' : 'en';
+            document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+        }
 
-    </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-
-            <div class="footer-col">
-
-                <div class="logo" style="color:#fff;font-size:18px;margin-bottom:15px;">
-                    TF Technologies
-                </div>
-
-                <div>&copy; 2026 TF Technologies.</div>
-
-                <div class="lang-en">Astana, Kazakhstan. 010000</div>
-                <div class="lang-ru hidden">Астана, Казахстан. 010000</div>
-
-                <div class="lang-en">All rights reserved.</div>
-                <div class="lang-ru hidden">Все права защищены.</div>
-
-            </div>
-
-        </div>
-    </div>
-</footer>
-
-
-<script src="site.js"></script>
-
+        window.onload = function() {
+            const savedLang = localStorage.getItem('siteLang') || 'ru';
+            setLang(savedLang);
+        }
+    </script>
 </body>
 </html>
