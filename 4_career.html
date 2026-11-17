@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TF Group | Space Technologies</title>
+    <title>Career | TF Technologies</title>
     
     <!-- Подключение современных шрифтов Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,12 +111,97 @@
             font-weight: 300; 
             color: #e0e0e0;
         }
+
+        /* --- СЕКЦИЯ ВАКАНСИЙ --- */
+        section { padding: 80px 0; background: var(--hover-bg); }
         
-        .btn-white {
-            display: inline-block; background: #fff; color: var(--accent);
-            padding: 14px 36px; font-size: 16px; font-weight: 600; border-radius: 2px; transition: all 0.2s;
+        .vacancy-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
+
+        .vacancy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .vacancy-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .vacancy-meta {
+            font-size: 15px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .vacancy-section {
+            margin-bottom: 30px;
+        }
+
+        .vacancy-section h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .vacancy-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .vacancy-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .vacancy-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .btn-apply {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 36px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-apply:hover {
+            background: #004494;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
 
         /* --- ФУТЕР --- */
         footer { 
@@ -139,11 +224,12 @@
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .hero h1 { font-size: 40px; }
+            .vacancy-card { padding: 24px; }
+            .vacancy-title { font-size: 24px; }
         }
     </style>
 </head>
 
-<!-- BODY OF THE MAIN PAGE - START -->
 <body>
     <header>
         <div class="container nav-container">
@@ -161,10 +247,8 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <!-- Делаем сам текст "Услуги" ссылкой на общую страницу -->
                         <a href="2_services.html" class="nav-link lang-en">Services ▾</a>
                         <a href="2_services.html" class="nav-link lang-ru hidden">Услуги ▾</a>
-                        
                         <div class="dropdown">
                             <a href="2_1_tf_space.html" class="lang-en">TF Space</a>
                             <a href="2_1_tf_space.html" class="lang-ru hidden">TF космос</a>
@@ -183,7 +267,6 @@
                         <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
                     </li>
                 </ul>
-                <!-- Переключатель языков -->
                 <div class="lang-switch">
                     <span id="btn-en" onclick="setLang('en')">EN</span>
                     <span>/</span>
@@ -199,9 +282,99 @@
             <div class="hero-content">
                 <h1 class="lang-en">Career</h1>
                 <h1 class="lang-ru hidden">Карьера</h1>
+                <p class="lang-en">Join our team of experts in space reliability engineering.</p>
+                <p class="lang-ru hidden">Присоединяйтесь к команде экспертов в области надежности космических систем.</p>
             </div>
         </div>
     </div>
+
+    <!-- Секция с вакансией -->
+    <section>
+        <div class="container">
+            <div class="vacancy-card">
+                
+                <div class="vacancy-header">
+                    <div>
+                        <h2 class="vacancy-title lang-en">Reliability Engineer</h2>
+                        <h2 class="vacancy-title lang-ru hidden">Инженер по надежности</h2>
+                        <div class="vacancy-meta lang-en">Full-time • Astana, Kazakhstan (Hybrid)</div>
+                        <div class="vacancy-meta lang-ru hidden">Полная занятость • Астана, Казахстан (Гибрид)</div>
+                    </div>
+                </div>
+
+                <!-- Английская версия -->
+                <div class="lang-en">
+                    <div class="vacancy-section">
+                        <h3>About the Role</h3>
+                        <p style="color: var(--muted); margin-bottom: 20px;">
+                            We are looking for a skilled Reliability Engineer to support our space projects. You will be responsible for ensuring the reliability and quality of space equipment through detailed analysis, documentation, and compliance with ECSS standards.
+                        </p>
+                    </div>
+
+                    <div class="vacancy-section">
+                        <h3>Key Responsibilities</h3>
+                        <ul class="vacancy-list">
+                            <li>Perform FMEA/FMECA and Fault Tree Analysis (FTA) for satellite subsystems.</li>
+                            <li>Develop and maintain Product Assurance documentation (DML, DPL, DMPL).</li>
+                            <li>Conduct derating analysis and EEE component assessment.</li>
+                            <li>Support review gates (PDR, CDR, DRR) and manage verification matrices.</li>
+                            <li>Investigate anomalies and support AIT campaigns.</li>
+                        </ul>
+                    </div>
+
+                    <div class="vacancy-section">
+                        <h3>Requirements & Skills</h3>
+                        <ul class="vacancy-list">
+                            <li>Degree in Aerospace, Electronics, or Mechanical Engineering.</li>
+                            <li>2+ years of experience in space or high-reliability industries.</li>
+                            <li>Strong knowledge of ECSS standards (Q-ST-30, Q-ST-60).</li>
+                            <li>Experience with RAMS, MTBF/MTTR calculations, and availability analysis.</li>
+                            <li>Fluent English and Russian (both written and spoken).</li>
+                            <li>Proficiency in Python or Excel for engineering calculations is a plus.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Русская версия -->
+                <div class="lang-ru hidden">
+                    <div class="vacancy-section">
+                        <h3>О роли</h3>
+                        <p style="color: var(--muted); margin-bottom: 20px;">
+                            Мы ищем квалифицированного инженера по надежности для поддержки наших космических проектов. Вы будете отвечать за обеспечение надежности и качества космического оборудования посредством детального анализа, подготовки документации и соблюдения стандартов ECSS.
+                        </p>
+                    </div>
+
+                    <div class="vacancy-section">
+                        <h3>Основные обязанности</h3>
+                        <ul class="vacancy-list">
+                            <li>Проведение FMEA/FMECA и анализа дерева отказов (FTA) для подсистем спутников.</li>
+                            <li>Разработка и ведение документации Product Assurance (DML, DPL, DMPL).</li>
+                            <li>Проведение анализа деградации (derating) и оценка EEE-компонентов.</li>
+                            <li>Поддержка этапов ревью (PDR, CDR, DRR) и ведение матриц верификации.</li>
+                            <li>Расследование аномалий и поддержка кампаний AIT (сборка и испытания).</li>
+                        </ul>
+                    </div>
+
+                    <div class="vacancy-section">
+                        <h3>Требования и навыки</h3>
+                        <ul class="vacancy-list">
+                            <li>Высшее образование в области аэрокосмической, электронной или механической инженерии.</li>
+                            <li>Опыт работы от 2 лет в космической отрасли или в сферах с высокими требованиями к надежности.</li>
+                            <li>Отличное знание стандартов ECSS (Q-ST-30, Q-ST-60).</li>
+                            <li>Опыт работы с RAMS, расчетами MTBF/MTTR и анализом доступности.</li>
+                            <li>Свободное владение английским и русским языками.</li>
+                            <li>Навыки программирования на Python или продвинутое использование Excel для инженерных расчетов будут преимуществом.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Кнопки отклика -->
+                <a href="mailto:career@tf-technologies.com" class="btn-apply lang-en">Apply Now</a>
+                <a href="mailto:career@tf-technologies.com" class="btn-apply lang-ru hidden">Откликнуться на вакансию</a>
+                
+            </div>
+        </div>
+    </section>
 
     <!-- Футер -->
     <footer>
@@ -224,28 +397,22 @@
     <!-- Скрипт переключения языков -->
     <script>
         function setLang(lang) {
-            // 1. Запоминаем выбор в памяти браузера
             localStorage.setItem('siteLang', lang);
 
-            // 2. Меняем активный класс у кнопок
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
-            // 3. Прячем противоположный язык и показываем выбранный
             const hideLang = lang === 'en' ? 'ru' : 'en';
             document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
         }
 
-        // 4. Проверяем память при загрузке страницы
         window.onload = function() {
-            const savedLang = localStorage.getItem('siteLang') || 'ru'; // По умолчанию RU
+            const savedLang = localStorage.getItem('siteLang') || 'ru';
             setLang(savedLang);
         }
     </script>
     
 </body>
-<!-- BODY OF THE MAIN PAGE - END-->
-  
 </html>
