@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Assurance & Documentation | TF Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,Arial,sans-serif;color:#171717;line-height:1.7}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:auto;padding:0 25px}
+    header{height:80px;background:#fff;border-bottom:1px solid #e5e5e5;position:sticky;top:0;z-index:100}
+    nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .logo{font:700 21px Montserrat;color:#0056b3;letter-spacing:1px}
+    .menu{display:flex;align-items:center;gap:25px;list-style:none}
+    .menu a{font-size:13px;font-weight:600;color:#222}
+    .menu a:hover{color:#0056b3}
+    .dropdown{position:relative}
+    .dropdown-menu{display:none;position:absolute;top:30px;left:0;width:290px;background:#fff;border:1px solid #ddd;box-shadow:0 10px 25px #0001}
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown-menu a{display:block;padding:11px 16px}
+    .dropdown-menu a:hover{background:#f4f7fb}
+    .lang{display:flex;gap:10px;font-size:13px}
+    .lang button{border:0;background:none;cursor:pointer;color:#888;font-weight:600}
+    .lang button.active{color:#0056b3}
+    .hero{min-height:450px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#06172be8,#06172b75),url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2000') center/cover}
+    .eyebrow{color:#a9d2ff;text-transform:uppercase;letter-spacing:2px;font-size:12px;margin-bottom:20px}
+    h1{font:500 clamp(35px,5vw,58px)/1.15 Montserrat;margin-bottom:20px;max-width:850px}
+    .hero p{font-size:18px;font-weight:300;max-width:780px;color:#e3eaf1}
+    .button{display:inline-block;background:#fff;color:#0056b3;padding:13px 25px;margin-top:28px;font-size:14px;font-weight:700}
+    section{padding:75px 0}
+    .light{background:#f6f8fb}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#0056b3;font-weight:700;margin-bottom:12px}
+    h2{font:500 32px Montserrat;margin-bottom:20px}
+    h3{font:600 19px Montserrat;margin-bottom:12px}
+    .lead{font-size:17px;color:#555;max-width:950px}
+    .two{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+    .photo{width:100%;height:340px;object-fit:cover}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px}
+    .card{border:1px solid #e2e6eb;padding:27px;background:#fff}
+    .card p,.card li{font-size:14px;color:#555}
+    .card ul{padding-left:20px;margin-top:12px}
+    .card li{margin:7px 0}
+    .number{color:#0056b3;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:12px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+    .step{padding:22px 18px;border-top:3px solid #0056b3;background:#fff}
+    .step span{font-size:12px;color:#0056b3;font-weight:700}
+    .step p{font-size:13px;color:#555}
+    .columns{display:grid;grid-template-columns:1fr 1fr;gap:45px;margin-top:25px}
+    .columns ul{padding-left:20px;color:#555;font-size:14px}
+    .columns li{margin:9px 0}
+    .note{margin-top:25px;padding:20px;background:#edf4fc;border-left:4px solid #0056b3;font-size:14px;color:#435267}
+    .cta{background:#0b1a2a;color:white;padding:60px 0}
+    .cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}
+    .cta p{color:#c2ccd8;max-width:720px;font-size:14px}
+    .cta h2{margin-bottom:10px}
+    footer{background:#071421;color:#9ba7b5;padding:40px 0;font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .footer-logo{font:700 18px Montserrat;color:white;margin-bottom:10px}
+    @media(max-width:800px){.menu{gap:10px}.menu a{font-size:11px}.two{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){header{height:auto;padding:18px 0}.menu{display:none}.cards,.columns,.steps{grid-template-columns:1fr}.cta-inner{display:block}.hero{min-height:400px}section{padding:55px 0}}
+    </style>
+    </head>
+    <body>
+    
+    <header>
+    <div class="container">
+    <nav>
+    <a href="0_index.html" class="logo">TF GROUP</a>
+    <ul class="menu">
+    <li><a href="0_index.html">Home</a></li>
+    <li><a href="1_about_tf.html">About</a></li>
+    <li class="dropdown">
+    <a href="2_services.html">Services ▾</a>
+    <div class="dropdown-menu">
+    <a href="2_1_tf_space.html">TF Space Technologies</a>
+    <a href="2_1_1_pa_documentation.html">Product Assurance & Documentation</a>
+    <a href="2_1_2_reliability_analysis.html">Reliability Engineering</a>
+    <a href="2_1_3_eee_components.html">EEE Components Engineering</a>
+    <a href="2_1_4_verification_ait.html">Verification & AIT</a>
+    <a href="2_1_5_satellite_operations.html">Satellite Operations</a>
+    </div>
+    </li>
+    <li><a href="3_news.html">News</a></li>
+    <li><a href="4_career.html">Career</a></li>
+    <li><a href="5_contacts.html">Contact</a></li>
+    </ul>
+    <div class="lang">
+    <button class="active" onclick="setLanguage('ru')">RU</button>
+    <button onclick="setLanguage('en')">EN</button>
+    </div>
+    </nav>
+    </div>
+    </header>
+    
+    <div class="hero">
+      <div class="container">
+        <div class="eyebrow">TF Space Technologies / Engineering Services</div>
+        <h1 data-ru="Product Assurance и техническая документация" data-en="Product Assurance & Documentation">Product Assurance и техническая документация</h1>
+        <p data-ru="Комплексная инженерная поддержка в области обеспечения качества, управления технической документацией и прослеживаемости требований для космических систем." data-en="Engineering support in product assurance, technical documentation management and requirements traceability for space systems.">Комплексная инженерная поддержка в области обеспечения качества, управления технической документацией и прослеживаемости требований для космических систем.</p>
+        <a href="5_contacts.html" class="button" data-ru="Обсудить проект" data-en="Discuss Your Project">Обсудить проект</a>
+      </div>
+    </div>
+    
+    <section>
+      <div class="container two">
+        <div>
+          <div class="kicker" data-ru="Об услуге" data-en="About the Service">Об услуге</div>
+          <h2 data-ru="Контроль качества на каждом этапе разработки" data-en="Quality Assurance Throughout Development">Контроль качества на каждом этапе разработки</h2>
+          <p class="lead" data-ru="Product Assurance (PA) обеспечивает системный подход к контролю качества и технической целостности космического оборудования. Он позволяет выявлять потенциальные проблемы на ранних этапах, отслеживать выполнение требований и поддерживать согласованность проектной документации." data-en="Product Assurance (PA) provides a systematic approach to controlling the quality and technical integrity of space equipment. It helps identify potential problems early, track requirements compliance and maintain consistency across project documentation.">Product Assurance (PA) обеспечивает системный подход к контролю качества и технической целостности космического оборудования. Он позволяет выявлять потенциальные проблемы на ранних этапах, отслеживать выполнение требований и поддерживать согласованность проектной документации.</p>
+        </div>
+        <img class="photo" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200" alt="Engineering documentation and quality assurance">
+      </div>
+    </section>
+    
+    <section class="light">
+      <div class="container">
+        <div class="kicker" data-ru="Направления работы" data-en="Scope of Services">Направления работы</div>
+        <h2 data-ru="Основные направления Product Assurance" data-en="Product Assurance Scope">Основные направления Product Assurance</h2>
+        <div class="cards">
+            <div class="card">
+              <div class="number">01 / PA PLANNING</div>
+              <h3 data-ru="Планирование Product Assurance" data-en="Product Assurance Planning">Планирование Product Assurance</h3>
+              <p data-ru="Разработка структуры PA-документации, определение состава документов, распределение ответственности и планирование контрольных мероприятий." data-en="Development of PA documentation structure, definition of required documents, responsibility allocation and planning of assurance activities.">Разработка структуры PA-документации, определение состава документов, распределение ответственности и планирование контрольных мероприятий.</p>
+            </div>
+            <div class="card">
+              <div class="number">02 / FMEA</div>
+              <h3 data-ru="Анализ видов и последствий отказов" data-en="Failure Mode and Effects Analysis">Анализ видов и последствий отказов</h3>
+              <p data-ru="Идентификация потенциальных отказов, анализ причин и последствий, оценка рисков и формирование рекомендаций по снижению рисков." data-en="Identification of potential failures, analysis of causes and effects, risk assessment and recommendations for risk reduction.">Идентификация потенциальных отказов, анализ причин и последствий, оценка рисков и формирование рекомендаций по снижению рисков.</p>
+            </div>
+            <div class="card">
+              <div class="number">03 / MATERIALS & PROCESSES</div>
+              <h3 data-ru="DML, DPL и DMPL" data-en="DML, DPL and DMPL">DML, DPL и DMPL</h3>
+              <p data-ru="Подготовка и проверка перечней материалов и технологических процессов, используемых при разработке и производстве оборудования." data-en="Preparation and review of declared materials and processes lists used in equipment design and manufacturing.">Подготовка и проверка перечней материалов и технологических процессов, используемых при разработке и производстве оборудования.</p>
+            </div>
+            <div class="card">
+              <div class="number">04 / PCB DOCUMENTATION</div>
+              <h3 data-ru="PCB и производственная документация" data-en="PCB and Manufacturing Documentation">PCB и производственная документация</h3>
+              <p data-ru="Структурирование технической документации печатных плат, производственных данных, спецификаций и материалов поставщиков." data-en="Structuring PCB technical documentation, manufacturing data, specifications and supplier documentation.">Структурирование технической документации печатных плат, производственных данных, спецификаций и материалов поставщиков.</p>
+            </div>
+            <div class="card">
+              <div class="number">05 / TRACEABILITY</div>
+              <h3 data-ru="Прослеживаемость требований" data-en="Requirements Traceability">Прослеживаемость требований</h3>
+              <p data-ru="Проверка взаимосвязи между требованиями, проектными решениями, документами и результатами верификации." data-en="Checking consistency between requirements, design solutions, documentation and verification evidence.">Проверка взаимосвязи между требованиями, проектными решениями, документами и результатами верификации.</p>
+            </div>
+            <div class="card">
+              <div class="number">06 / DOCUMENT CONTROL</div>
+              <h3 data-ru="Управление документацией" data-en="Documentation Control">Управление документацией</h3>
+              <p data-ru="Проверка ревизий, структуры документов, ссылок, статусов согласования и соответствия установленным правилам проекта." data-en="Review of document revisions, structure, references, approval status and compliance with project rules.">Проверка ревизий, структуры документов, ссылок, статусов согласования и соответствия установленным правилам проекта.</p>
+            </div>
+          </div>
+      </div>
+    </section>
+    
+    <section>
+    <div class="container">
+    <div class="kicker" data-ru="Рабочий процесс" data-en="Workflow">Рабочий процесс</div>
+    <h2 data-ru="Как организуется работа" data-en="How We Work">Как организуется работа</h2>
+    <div class="steps">
+    <div class="step"><span>STEP 01</span><h3 data-ru="Анализ проекта" data-en="Project Review">Анализ проекта</h3><p data-ru="Изучение архитектуры изделия, требований заказчика, применимых стандартов и имеющейся документации." data-en="Review of product architecture, customer requirements, applicable standards and available documentation.">Изучение архитектуры изделия, требований заказчика, применимых стандартов и имеющейся документации.</p></div>
+    <div class="step"><span>STEP 02</span><h3 data-ru="Определение объёма" data-en="Scope Definition">Определение объёма</h3><p data-ru="Согласование состава документов, задач, исходных данных и ожидаемых результатов." data-en="Agreement on required documents, tasks, input data and expected outputs.">Согласование состава документов, задач, исходных данных и ожидаемых результатов.</p></div>
+    <div class="step"><span>STEP 03</span><h3 data-ru="Подготовка документации" data-en="Documentation Development">Подготовка документации</h3><p data-ru="Разработка, структурирование и проверка согласованного комплекта технических документов." data-en="Development, structuring and review of the agreed technical documentation package.">Разработка, структурирование и проверка согласованного комплекта технических документов.</p></div>
+    <div class="step"><span>STEP 04</span><h3 data-ru="Проверка и передача" data-en="Review and Delivery">Проверка и передача</h3><p data-ru="Проверка согласованности материалов, фиксация открытых вопросов и передача результатов заказчику." data-en="Consistency review, recording of open points and delivery of results to the customer.">Проверка согласованности материалов, фиксация открытых вопросов и передача результатов заказчику.</p></div>
+    </div>
+    </div>
+    </section>
+    
+    <section class="light">
+    <div class="container">
+    <div class="kicker" data-ru="Результаты работы" data-en="Deliverables">Результаты работы</div>
+    <h2 data-ru="Что получает заказчик" data-en="What the Customer Receives">Что получает заказчик</h2>
+    <div class="columns">
+    <ul>
+    <li>Структура и реестр документации Product Assurance.</li>
+    <li>Проекты PA-планов и технических отчётов.</li>
+    <li>Документация FMEA и реестр рисков.</li>
+    <li>Материалы DML, DPL и DMPL.</li>
+    </ul>
+    <ul>
+    <li>Документация PCB и производственные досье.</li>
+    <li>Материалы по прослеживаемости требований.</li>
+    <li>Перечень замечаний и открытых вопросов.</li>
+    <li>Рекомендации по улучшению документации.</li>
+    </ul>
+    </div>
+    </div>
+    </section>
+    
+    <section>
+    <div class="container">
+    <div class="kicker" data-ru="Практический опыт" data-en="Engineering Experience">Практический опыт</div>
+    <h2 data-ru="Опыт подготовки PA-документации" data-en="Product Assurance Documentation Experience">Опыт подготовки PA-документации</h2>
+    <p class="lead" data-ru="В рамках индивидуального инженерного проекта для прибора LEO была разработана значительная часть документационного пакета Product Assurance. Работа включала FMEA, DML, DPL, DMPL, документацию по PCB и производственные досье. Этот опыт демонстрирует практическую работу с инженерной документацией космического оборудования." data-en="As part of an individual engineering project for an LEO instrument, a substantial Product Assurance documentation package was developed. The work included FMEA, DML, DPL, DMPL, PCB documentation and manufacturing dossiers. This experience demonstrates practical work with space hardware engineering documentation.">В рамках индивидуального инженерного проекта для прибора LEO была разработана значительная часть документационного пакета Product Assurance. Работа включала FMEA, DML, DPL, DMPL, документацию по PCB и производственные досье. Этот опыт демонстрирует практическую работу с инженерной документацией космического оборудования.</p>
+    <div class="note" data-ru="Объём услуг определяется индивидуально. Подготовка документации и инженерная проверка не заменяют официальное утверждение, сертификацию, приёмку изделия или полномочия уполномоченных представителей заказчика." data-en="The service scope is defined individually. Documentation preparation and engineering review do not replace formal approval, certification, product acceptance or the authority of designated customer representatives.">Объём услуг определяется индивидуально. Подготовка документации и инженерная проверка не заменяют официальное утверждение, сертификацию, приёмку изделия или полномочия уполномоченных представителей заказчика.</div>
+    </div>
+    </section>
+    
+    <div class="cta">
+    <div class="container cta-inner">
+    <div>
+    <h2 data-ru="Нужна поддержка Product Assurance?" data-en="Need Product Assurance Support?">Нужна поддержка Product Assurance?</h2>
+    <p data-ru="Обсудим задачи вашего проекта, требования к документации и необходимый объём инженерной поддержки." data-en="Let's discuss your project requirements, documentation needs and the engineering support required.">Обсудим задачи вашего проекта, требования к документации и необходимый объём инженерной поддержки.</p>
+    </div>
+    <a href="5_contacts.html" class="button" data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</a>
+    </div>
+    </div>
+    
+    <footer>
+    <div class="container footer-inner">
+    <div><div class="footer-logo">TF GROUP</div><p>Space Technologies & Engineering Solutions</p></div>
+    <div><p>© 2026 TF Group. All rights reserved.</p><p><a href="5_contacts.html">Contact</a></p></div>
+    </div>
+    </footer>
+    
+    <script>
+    function setLanguage(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-ru]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+lang);
+    });
+    document.querySelectorAll('.lang button').forEach(btn=>btn.classList.remove('active'));
+    document.querySelector('.lang button[onclick="setLanguage(\''+lang+'\')"]').classList.add('active');
+    }
+    </script>
+  </body>
+</html>
