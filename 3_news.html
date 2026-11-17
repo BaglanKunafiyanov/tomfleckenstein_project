@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TF Group | Space Technologies</title>
+    <title>News | TF Technologies</title>
     
-    <!-- Подключение современных шрифтов Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +18,6 @@
             --line: #e5e5e5; 
             --hover-bg: #f8f9fa;
             
-            /* Назначаем шрифты */
             --font-body: 'Inter', sans-serif;
             --font-heading: 'Montserrat', sans-serif;
         }
@@ -38,8 +36,6 @@
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-        /* --- Утилита для скрытия языков --- */
         .hidden { display: none !important; }
 
         /* --- HEADER И НАВИГАЦИЯ --- */
@@ -69,7 +65,6 @@
         }
         .nav-item:hover .nav-link { color: var(--accent); }
         
-        /* ВЫПАДАЮЩЕЕ МЕНЮ */
         .dropdown {
             position: absolute; top: 80px; left: 0; background: #fff;
             border: 1px solid var(--line); border-top: none; min-width: 250px;
@@ -80,7 +75,6 @@
         .dropdown a { padding: 12px 20px; font-size: 14px; color: var(--text); font-weight: 500; transition: background 0.2s; }
         .dropdown a:hover { background: var(--hover-bg); color: var(--accent); text-decoration: none; }
 
-        /* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ */
         .lang-switch { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--line); }
         .lang-switch span { cursor: pointer; color: var(--muted); transition: color 0.2s; }
         .lang-switch span.active { color: var(--accent); }
@@ -89,7 +83,7 @@
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
         .hero {
             position: relative;
-            height: 550px;
+            height: 400px;
             background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2072&auto=format&fit=crop') center/cover;
             display: flex; align-items: center;
         }
@@ -111,12 +105,63 @@
             font-weight: 300; 
             color: #e0e0e0;
         }
+
+        /* --- СЕКЦИЯ НОВОСТЕЙ --- */
+        section { padding: 80px 0; }
         
-        .btn-white {
-            display: inline-block; background: #fff; color: var(--accent);
-            padding: 14px 36px; font-size: 16px; font-weight: 600; border-radius: 2px; transition: all 0.2s;
+        .news-card {
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #fff;
+            transition: all 0.3s ease;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .btn-white:hover { background: var(--hover-bg); text-decoration: none; transform: translateY(-2px); }
+        
+        .news-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: #ccc;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-content {
+            padding: 40px;
+        }
+
+        .news-date {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .news-title {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .news-text {
+            font-size: 17px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .news-text p {
+            margin-bottom: 20px;
+        }
 
         /* --- ФУТЕР --- */
         footer { 
@@ -124,6 +169,7 @@
             color: #8892b0; 
             padding: 60px 0 40px; 
             font-size: 14px; 
+            border-top: 1px solid var(--line);
         }
         .footer-content {
             display: flex;
@@ -139,11 +185,12 @@
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .hero h1 { font-size: 40px; }
+            .news-image { height: 250px; }
+            .news-content { padding: 24px; }
+            .news-title { font-size: 24px; }
         }
     </style>
 </head>
-
-<!-- BODY OF THE MAIN PAGE - START -->
 <body>
     <header>
         <div class="container nav-container">
@@ -161,10 +208,8 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <!-- Делаем сам текст "Услуги" ссылкой на общую страницу -->
                         <a href="2_services.html" class="nav-link lang-en">Services ▾</a>
                         <a href="2_services.html" class="nav-link lang-ru hidden">Услуги ▾</a>
-                        
                         <div class="dropdown">
                             <a href="2_1_tf_space.html" class="lang-en">TF Space</a>
                             <a href="2_1_tf_space.html" class="lang-ru hidden">TF космос</a>
@@ -183,7 +228,6 @@
                         <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
                     </li>
                 </ul>
-                <!-- Переключатель языков -->
                 <div class="lang-switch">
                     <span id="btn-en" onclick="setLang('en')">EN</span>
                     <span>/</span>
@@ -202,6 +246,36 @@
             </div>
         </div>
     </div>
+
+    <!-- Секция с новостью -->
+    <section>
+        <div class="container">
+            <div class="news-card">
+                <!-- Картинка для новости (можно заменить на фото офиса или команды) -->
+                <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=2000&auto=format&fit=crop" alt="TF Technologies Launch" class="news-image">
+                
+                <div class="news-content">
+                    <div class="news-date lang-en">January 15, 2026</div>
+                    <div class="news-date lang-ru hidden">15 Января 2026</div>
+                    
+                    <h2 class="news-title lang-en">Launch of TF Technologies: A New Era for Space Reliability in Kazakhstan</h2>
+                    <h2 class="news-title lang-ru hidden">Запуск TF Technologies: Новая эра надежности в космосе в Казахстане</h2>
+                    
+                    <div class="news-text lang-en">
+                        <p>We are proud to announce the official founding of <strong>TF Technologies</strong> in Astana, Kazakhstan, in 2026. Our company was established to address the growing demand for highly specialized engineering expertise in the rapidly developing space sector of Central Asia.</p>
+                        <p>TF Technologies focuses on Reliability and Product Assurance (PA) engineering. By strictly adhering to international ECSS standards, we bridge the gap between ambitious mission concepts and rigorous technical realities. Our team brings extensive experience across LEO and GEO programmes, offering full documentation packages (DML, DPL, DMPL) and FMEA analysis.</p>
+                        <p>We look forward to partnering with space integrators, operators, and NewSpace startups to ensure the success and safety of their missions.</p>
+                    </div>
+                    
+                    <div class="news-text lang-ru hidden">
+                        <p>Мы с гордостью объявляем об официальном основании компании <strong>TF Technologies</strong> в Астане, Казахстан, в 2026 году. Наша компания была создана для удовлетворения растущего спроса на узкоспециализированную инженерную экспертизу в быстро развивающемся космическом секторе Центральной Азии.</p>
+                        <p>TF Technologies специализируется на обеспечении надежности (Reliability) и качества продукции (Product Assurance). Строго следуя международным стандартам ECSS, мы соединяем амбициозные концепции миссий с суровыми техническими реалиями. Наша команда обладает обширным опытом работы в программах на низких (LEO) и геостационарных (GEO) орбитах, предлагая полные пакеты документации (DML, DPL, DMPL) и анализ FMEA.</p>
+                        <p>Мы с нетерпением ждем сотрудничества с системными интеграторами, операторами спутников и стартапами в сфере NewSpace, чтобы обеспечить успех и безопасность их миссий.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Футер -->
     <footer>
@@ -224,28 +298,22 @@
     <!-- Скрипт переключения языков -->
     <script>
         function setLang(lang) {
-            // 1. Запоминаем выбор в памяти браузера
             localStorage.setItem('siteLang', lang);
 
-            // 2. Меняем активный класс у кнопок
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
-            // 3. Прячем противоположный язык и показываем выбранный
             const hideLang = lang === 'en' ? 'ru' : 'en';
             document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
         }
 
-        // 4. Проверяем память при загрузке страницы
         window.onload = function() {
-            const savedLang = localStorage.getItem('siteLang') || 'ru'; // По умолчанию RU
+            const savedLang = localStorage.getItem('siteLang') || 'ru';
             setLang(savedLang);
         }
     </script>
     
 </body>
-<!-- BODY OF THE MAIN PAGE - END-->
-  
 </html>
