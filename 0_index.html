@@ -89,11 +89,9 @@
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
         .hero {
             position: relative;
-            height: 656px; /* ИСПРАВЛЕНО: было 100hv, стало 100vh (100% высоты экрана) */
-            min-height: 400px; /* Минимальная высота, чтобы на маленьких экранах не было слишком узко */
+            height: 656px;
             background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
-            display: flex; 
-            align-items: center;
+            display: flex; align-items: center;
         }
         
         .hero-content { color: #fff; max-width: 700px; }
@@ -142,6 +140,90 @@
             .nav-menu { display: none; }
             .hero h1 { font-size: 40px; }
         }
+
+        .contacts-section {
+            padding: 60px 0;
+            background: #ffffff;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 60px;
+        }
+        
+        .contact-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .contact-image {
+            flex: 1;
+            min-height: 300px;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+
+        .contact-text {
+            flex: 1;
+            padding: 40px 60px; 
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+        }
+
+        .contact-text h2 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-text p {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+        
+        .contact-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .contact-text a {
+            color: var(--accent);
+        }
+
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-margin-top {
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-row, .contact-row.reverse {
+                flex-direction: column;
+            }
+            .contact-image {
+                min-height: 250px;
+            }
+            .contact-text {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 
@@ -155,17 +237,15 @@
                     <li class="nav-item">
                         <a href="1_about_tf.html" class="nav-link lang-en">About TF ▾</a>
                         <a href="1_about_tf.html" class="nav-link lang-ru hidden">О TF ▾</a>
-                        
                         <div class="dropdown">
                             <a href="1_1_about_tf.html" class="lang-en">Company Overview</a>
                             <a href="1_1_about_tf.html" class="lang-ru hidden">О компании</a>
-                                
                             <a href="1_2_team.html" class="lang-en">Our Experience</a>
                             <a href="1_2_team.html" class="lang-ru hidden">Наш опыт</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        
+                        <!-- Делаем сам текст "Услуги" ссылкой на общую страницу -->
                         <a href="2_services.html" class="nav-link lang-en">Services ▾</a>
                         <a href="2_services.html" class="nav-link lang-ru hidden">Услуги ▾</a>
                         
@@ -187,7 +267,7 @@
                         <a href="5_contacts.html" class="nav-link lang-ru hidden">Контакты</a>
                     </li>
                 </ul>
-                
+                <!-- Переключатель языков -->
                 <div class="lang-switch">
                     <span id="btn-en" onclick="setLang('en')">EN</span>
                     <span>/</span>
@@ -212,6 +292,7 @@
         </div>
     </div>
 
+    <!-- Футер -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -229,27 +310,32 @@
         </div>
     </footer>
 
+    <!-- Скрипт переключения языков -->
     <script>
         function setLang(lang) {
-            
+            // 1. Запоминаем выбор в памяти браузера
             localStorage.setItem('siteLang', lang);
-   
+
+            // 2. Меняем активный класс у кнопок
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-ru').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
+            // 3. Прячем противоположный язык и показываем выбранный
             const hideLang = lang === 'en' ? 'ru' : 'en';
             document.querySelectorAll('.lang-' + hideLang).forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
         }
 
+        // 4. Проверяем память при загрузке страницы
         window.onload = function() {
-            const savedLang = localStorage.getItem('siteLang') || 'ru';
+            const savedLang = localStorage.getItem('siteLang') || 'ru'; // По умолчанию RU
             setLang(savedLang);
         }
     </script>
     
 </body>
 <!-- BODY OF THE MAIN PAGE - END-->
+</html>
   
 </html>
