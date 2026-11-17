@@ -89,10 +89,11 @@
         /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
         .hero {
             position: relative;
-            height: 100hv;
-            min-height: 656px; 
+            height: 100vh; /* ИСПРАВЛЕНО: было 100hv, стало 100vh (100% высоты экрана) */
+            min-height: 600px; /* Минимальная высота, чтобы на маленьких экранах не было слишком узко */
             background: linear-gradient(rgba(0,20,40,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop') center/cover;
-            display: flex; align-items: center;
+            display: flex; 
+            align-items: center;
         }
         
         .hero-content { color: #fff; max-width: 700px; }
