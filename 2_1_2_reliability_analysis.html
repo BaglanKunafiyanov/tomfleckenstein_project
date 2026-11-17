@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reliability Engineering | TF Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,Arial,sans-serif;color:#171717;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:auto;padding:0 25px}
+header{height:80px;background:#fff;border-bottom:1px solid #e5e5e5;position:sticky;top:0;z-index:100}
+nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 21px Montserrat;color:#0056b3;letter-spacing:1px}
+.menu{display:flex;align-items:center;gap:25px;list-style:none}
+.menu a{font-size:13px;font-weight:600;color:#222}
+.menu a:hover{color:#0056b3}
+.dropdown{position:relative}
+.dropdown-menu{display:none;position:absolute;top:30px;left:0;width:290px;background:#fff;border:1px solid #ddd;box-shadow:0 10px 25px #0001}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:11px 16px}
+.dropdown-menu a:hover{background:#f4f7fb}
+.lang{display:flex;gap:10px;font-size:13px}
+.lang button{border:0;background:none;cursor:pointer;color:#888;font-weight:600}
+.lang button.active{color:#0056b3}
+.hero{min-height:450px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#06172be8,#06172b75),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000') center/cover}
+.eyebrow{color:#a9d2ff;text-transform:uppercase;letter-spacing:2px;font-size:12px;margin-bottom:20px}
+h1{font:500 clamp(35px,5vw,58px)/1.15 Montserrat;margin-bottom:20px;max-width:850px}
+.hero p{font-size:18px;font-weight:300;max-width:780px;color:#e3eaf1}
+.button{display:inline-block;background:#fff;color:#0056b3;padding:13px 25px;margin-top:28px;font-size:14px;font-weight:700}
+section{padding:75px 0}
+.light{background:#f6f8fb}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#0056b3;font-weight:700;margin-bottom:12px}
+h2{font:500 32px Montserrat;margin-bottom:20px}
+h3{font:600 19px Montserrat;margin-bottom:12px}
+.lead{font-size:17px;color:#555;max-width:950px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+.photo{width:100%;height:340px;object-fit:cover}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px}
+.card{border:1px solid #e2e6eb;padding:27px;background:#fff}
+.card p,.card li{font-size:14px;color:#555}
+.card ul{padding-left:20px;margin-top:12px}
+.card li{margin:7px 0}
+.number{color:#0056b3;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:12px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.step{padding:22px 18px;border-top:3px solid #0056b3;background:#fff}
+.step span{font-size:12px;color:#0056b3;font-weight:700}
+.step p{font-size:13px;color:#555}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:45px;margin-top:25px}
+.columns ul{padding-left:20px;color:#555;font-size:14px}
+.columns li{margin:9px 0}
+.note{margin-top:25px;padding:20px;background:#edf4fc;border-left:4px solid #0056b3;font-size:14px;color:#435267}
+.cta{background:#0b1a2a;color:white;padding:60px 0}
+.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.cta p{color:#c2ccd8;max-width:720px;font-size:14px}
+.cta h2{margin-bottom:10px}
+footer{background:#071421;color:#9ba7b5;padding:40px 0;font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.footer-logo{font:700 18px Montserrat;color:white;margin-bottom:10px}
+@media(max-width:800px){.menu{gap:10px}.menu a{font-size:11px}.two{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){header{height:auto;padding:18px 0}.menu{display:none}.cards,.columns,.steps{grid-template-columns:1fr}.cta-inner{display:block}.hero{min-height:400px}section{padding:55px 0}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a href="0_index.html" class="logo">TF GROUP</a>
+<ul class="menu">
+<li><a href="0_index.html">Home</a></li>
+<li><a href="1_about_tf.html">About</a></li>
+<li class="dropdown">
+<a href="2_services.html">Services ▾</a>
+<div class="dropdown-menu">
+<a href="2_1_tf_space.html">TF Space Technologies</a>
+<a href="2_1_1_pa_documentation.html">Product Assurance & Documentation</a>
+<a href="2_1_2_reliability_analysis.html">Reliability Engineering</a>
+<a href="2_1_3_eee_components.html">EEE Components Engineering</a>
+<a href="2_1_4_verification_ait.html">Verification & AIT</a>
+<a href="2_1_5_satellite_operations.html">Satellite Operations</a>
+</div>
+</li>
+<li><a href="3_news.html">News</a></li>
+<li><a href="4_career.html">Career</a></li>
+<li><a href="5_contacts.html">Contact</a></li>
+</ul>
+<div class="lang">
+<button class="active" onclick="setLanguage('ru')">RU</button>
+<button onclick="setLanguage('en')">EN</button>
+</div>
+</nav>
+</div>
+</header>
+
+<div class="hero">
+<div class="container">
+<div class="eyebrow">TF Space Technologies / Engineering Services</div>
+<h1 data-ru="Инженерия надёжности и анализ" data-en="Reliability Engineering & Analysis">Инженерия надёжности и анализ</h1>
+<p data-ru="Анализ отказов, оценка надёжности и разработка инженерных решений для повышения устойчивости космических систем и оборудования." data-en="Failure analysis, reliability assessment and engineering solutions to improve the resilience of space systems and equipment.">Анализ отказов, оценка надёжности и разработка инженерных решений для повышения устойчивости космических систем и оборудования.</p>
+<a href="5_contacts.html" class="button" data-ru="Обсудить проект" data-en="Discuss Your Project">Обсудить проект</a>
+</div>
+</div>
+
+<section>
+<div class="container two">
+<div>
+<div class="kicker" data-ru="Об услуге" data-en="About the Service">Об услуге</div>
+<h2 data-ru="Надёжность как часть инженерного проектирования" data-en="Reliability as Part of Engineering Design">Надёжность как часть инженерного проектирования</h2>
+<p class="lead" data-ru="Инженерия надёжности позволяет системно оценивать потенциальные отказы оборудования, их причины и последствия. Результаты анализа помогают принимать обоснованные проектные решения, определять приоритеты технических мероприятий и формировать требования к эксплуатации и обслуживанию." data-en="Reliability engineering provides a systematic assessment of potential equipment failures, their causes and consequences. The results support informed design decisions, prioritisation of engineering actions and the definition of operational and maintenance requirements.">Инженерия надёжности позволяет системно оценивать потенциальные отказы оборудования, их причины и последствия. Результаты анализа помогают принимать обоснованные проектные решения, определять приоритеты технических мероприятий и формировать требования к эксплуатации и обслуживанию.</p>
+</div>
+<img class="photo" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="Electronic engineering analysis">
+</div>
+</section>
+
+<section class="light">
+<div class="container">
+<div class="kicker" data-ru="Направления работы" data-en="Scope of Services">Направления работы</div>
+<h2 data-ru="Основные направления анализа" data-en="Main Areas of Analysis">Основные направления анализа</h2>
+<div class="cards">
+<div class="card">
+<div class="number">01 / FMEA & FMECA</div>
+<h3>FMEA / FMECA</h3>
+<p data-ru="Идентификация функций оборудования и потенциальных видов отказов, анализ причин, локальных и конечных последствий, оценка критичности и разработка рекомендаций." data-en="Identification of equipment functions and potential failure modes, analysis of causes and local and end effects, criticality assessment and recommendations.">Идентификация функций оборудования и потенциальных видов отказов, анализ причин, локальных и конечных последствий, оценка критичности и разработка рекомендаций.</p>
+</div>
+<div class="card">
+<div class="number">02 / FAULT TREE ANALYSIS</div>
+<h3>Fault Tree Analysis (FTA)</h3>
+<p data-ru="Построение логических моделей отказов на уровне системы, определение комбинаций событий, которые могут привести к нежелательному результату." data-en="Development of system-level fault logic models and identification of event combinations that may lead to an undesired outcome.">Построение логических моделей отказов на уровне системы, определение комбинаций событий, которые могут привести к нежелательному результату.</p>
+</div>
+<div class="card">
+<div class="number">03 / RELIABILITY ASSESSMENT</div>
+<h3 data-ru="Оценка надёжности" data-en="Reliability Assessment">Оценка надёжности</h3>
+<p data-ru="Оценка показателей надёжности на основе архитектуры системы, профиля миссии, условий эксплуатации и доступных данных о компонентах." data-en="Assessment of reliability indicators based on system architecture, mission profile, operating conditions and available component data.">Оценка показателей надёжности на основе архитектуры системы, профиля миссии, условий эксплуатации и доступных данных о компонентах.</p>
+</div>
+<div class="card">
+<div class="number">04 / AVAILABILITY</div>
+<h3 data-ru="Оценка доступности" data-en="Availability Analysis">Оценка доступности</h3>
+<p data-ru="Разработка методик оценки доступности с учётом времени восстановления, ремонтопригодности, логистики и эксплуатационных ограничений." data-en="Development of availability assessment methods considering restoration time, maintainability, logistics and operational constraints.">Разработка методик оценки доступности с учётом времени восстановления, ремонтопригодности, логистики и эксплуатационных ограничений.</p>
+</div>
+<div class="card">
+<div class="number">05 / SPARE PARTS</div>
+<h3 data-ru="Оптимизация запасных частей" data-en="Spare Parts Optimisation">Оптимизация запасных частей</h3>
+<p data-ru="Расчёт потребности в запасных компонентах с учётом предполагаемых отказов, сроков поставки, доступности и требований к поддержанию работоспособности." data-en="Calculation of spare component requirements considering expected failures, lead times, availability and operational support requirements.">Расчёт потребности в запасных компонентах с учётом предполагаемых отказов, сроков поставки, доступности и требований к поддержанию работоспособности.</p>
+</div>
+<div class="card">
+<div class="number">06 / FAILURE DATA</div>
+<h3 data-ru="Анализ данных об отказах" data-en="Failure Data Analysis">Анализ данных об отказах</h3>
+<p data-ru="Систематизация статистики отказов, анализ тенденций, выявление повторяющихся проблем и подготовка технических рекомендаций." data-en="Structuring failure statistics, analysing trends, identifying recurring problems and preparing technical recommendations.">Систематизация статистики отказов, анализ тенденций, выявление повторяющихся проблем и подготовка технических рекомендаций.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="kicker" data-ru="Методология" data-en="Methodology">Методология</div>
+<h2 data-ru="Этапы выполнения анализа" data-en="Analysis Workflow">Этапы выполнения анализа</h2>
+<div class="steps">
+<div class="step"><span>STEP 01</span><h3 data-ru="Сбор исходных данных" data-en="Data Collection">Сбор исходных данных</h3><p data-ru="Изучение архитектуры, схем, спецификаций, условий работы и профиля миссии." data-en="Review of architecture, schematics, specifications, operating conditions and mission profile.">Изучение архитектуры, схем, спецификаций, условий работы и профиля миссии.</p></div>
+<div class="step"><span>STEP 02</span><h3 data-ru="Идентификация отказов" data-en="Failure Identification">Идентификация отказов</h3><p data-ru="Определение возможных видов отказов, причин, последствий и механизмов обнаружения." data-en="Identification of possible failure modes, causes, effects and detection mechanisms.">Определение возможных видов отказов, причин, последствий и механизмов обнаружения.</p></div>
+<div class="step"><span>STEP 03</span><h3 data-ru="Оценка и расчёты" data-en="Assessment and Calculations">Оценка и расчёты</h3><p data-ru="Применение согласованных методик, оценка критичности и анализ доступных данных." data-en="Application of agreed methodologies, criticality assessment and analysis of available data.">Применение согласованных методик, оценка критичности и анализ доступных данных.</p></div>
+<div class="step"><span>STEP 04</span><h3 data-ru="Рекомендации" data-en="Recommendations">Рекомендации</h3><p data-ru="Подготовка отчёта, приоритизация мер по снижению рисков и фиксация допущений." data-en="Preparation of a report, prioritisation of risk-reduction measures and documentation of assumptions.">Подготовка отчёта, приоритизация мер по снижению рисков и фиксация допущений.</p></div>
+</div>
+</div>
+</section>
+
+<section class="light">
+<div class="container">
+<div class="kicker" data-ru="Результаты работы" data-en="Deliverables">Результаты работы</div>
+<h2 data-ru="Что получает заказчик" data-en="What the Customer Receives">Что получает заказчик</h2>
+<div class="columns">
+<ul>
+<li>Таблицы FMEA / FMECA.</li>
+<li>Диаграммы Fault Tree Analysis.</li>
+<li>Отчёт по оценке надёжности.</li>
+<li>Реестр допущений и исходных данных.</li>
+</ul>
+<ul>
+<li>Методика расчёта доступности.</li>
+<li>Анализ потребности в запасных частях.</li>
+<li>Расчётные таблицы и инструменты анализа.</li>
+<li>Технические рекомендации и перечень открытых вопросов.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="kicker" data-ru="Практический опыт" data-en="Engineering Experience">Практический опыт</div>
+<h2 data-ru="Опыт выполнения анализа надёжности" data-en="Reliability Analysis Experience">Опыт выполнения анализа надёжности</h2>
+<p class="lead" data-ru="Практический опыт включает выполнение FMECA примерно для 240 видов отказов по 14 активным компонентам, разработку методики оценки доступности и создание инструмента на Python для оптимизации запасных частей. Эти показатели относятся к конкретному инженерному проекту." data-en="Practical experience includes an FMECA covering approximately 240 failure modes across 14 active components, development of an availability assessment methodology and creation of a Python tool for spare-parts optimisation. These figures refer to a specific engineering project.">Практический опыт включает выполнение FMECA примерно для 240 видов отказов по 14 активным компонентам, разработку методики оценки доступности и создание инструмента на Python для оптимизации запасных частей. Эти показатели относятся к конкретному инженерному проекту.</p>
+<div class="note" data-ru="Результаты расчётов надёжности являются инженерными оценками, зависящими от качества исходных данных, применимости статистики компонентов и принятых допущений. Они не являются гарантией фактического срока службы или безотказной работы оборудования." data-en="Reliability calculations are engineering estimates dependent on input data quality, component data applicability and assumptions. They do not guarantee actual equipment lifetime or failure-free operation.">Результаты расчётов надёжности являются инженерными оценками, зависящими от качества исходных данных, применимости статистики компонентов и принятых допущений. Они не являются гарантией фактического срока службы или безотказной работы оборудования.</div>
+</div>
+</section>
+
+<div class="cta">
+<div class="container cta-inner">
+<div>
+<h2 data-ru="Требуется анализ надёжности?" data-en="Need Reliability Engineering Support?">Требуется анализ надёжности?</h2>
+<p data-ru="Обсудим архитектуру вашего оборудования, доступные исходные данные и задачи, которые необходимо решить." data-en="Let's discuss your equipment architecture, available input data and the engineering challenges to be addressed.">Обсудим архитектуру вашего оборудования, доступные исходные данные и задачи, которые необходимо решить.</p>
+</div>
+<a href="5_contacts.html" class="button" data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</a>
+</div>
+</div>
+
+<footer>
+<div class="container footer-inner">
+<div><div class="footer-logo">TF GROUP</div><p>Space Technologies & Engineering Solutions</p></div>
+<div><p>© 2026 TF Group. All rights reserved.</p><p><a href="5_contacts.html">Contact</a></p></div>
+</div>
+</footer>
+
+<script>
+function setLanguage(lang){
+document.documentElement.lang=lang;
+document.querySelectorAll('[data-ru]').forEach(el=>el.textContent=el.getAttribute('data-'+lang));
+document.querySelectorAll('.lang button').forEach(btn=>btn.classList.remove('active'));
+document.querySelector('.lang button[onclick="setLanguage(\''+lang+'\')"]').classList.add('active');
+}
+</script>
+</body>
+</html>
