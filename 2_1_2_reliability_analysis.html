@@ -23,9 +23,9 @@
         .hidden { display: none !important; }
 
         /* --- HEADER --- */
-        header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); position: sticky; top: 0; z-index: 100; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+        header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); position: sticky; top: 0; z-index: 100; height: 80px; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .logo { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; line-height: 1; }
         .nav-right { display: flex; align-items: center; gap: 30px; height: 100%; }
         .nav-menu { display: flex; list-style: none; gap: 30px; height: 100%; }
         .nav-item { position: relative; display: flex; align-items: center; cursor: pointer; height: 100%; }
@@ -113,9 +113,9 @@
 
         /* --- ФУТЕР --- */
         footer { background: #0b1a2a; color: #8892b0; padding: 60px 0 40px; font-size: 14px }
-        .footer-inner { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
-        .footer-logo { font-family: var(--font-heading); font-size: 18px; font-weight: 600; color: white; margin-bottom: 10px; }
-        .footer-inner a { color: #fff; }
+        .footer-content { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
+        .footer-col p { margin-bottom: 10px; }
+        .footer-col a { color: #fff; }
         
         @media(max-width: 900px) {
             .two, .cards, .steps, .columns { grid-template-columns: 1fr; }
@@ -176,7 +176,6 @@
     <!-- Главный экран (Hero) -->
     <div class="hero">
         <div class="container hero-content">
-            
             <h1 class="lang-en">Dependability</h1>
             <h1 class="lang-ru hidden">Надёжность</h1>
             
@@ -195,8 +194,8 @@
                 <h2 class="section-title lang-en">Dependability as Part of Design</h2>
                 <h2 class="section-title lang-ru hidden">Надёжность как часть проекта</h2>
                 
-                <p class="lead lang-en"> provides a systematic assessment of potential equipment failures, their causes and consequences. The results support informed design decisions, prioritisation of engineering actions and the definition of operational and maintenance requirements.</p>
-                <p class="lead lang-ru hidden">Надёжности позволяет системно оценивать потенциальные отказы оборудования, их причины и последствия. Результаты анализа помогают принимать обоснованные проектные решения, определять приоритеты технических мероприятий и формировать требования к эксплуатации и обслуживанию.</p>
+                <p class="lead lang-en">Dependability provides a systematic assessment of potential equipment failures, their causes and consequences. The results support informed design decisions, prioritisation of engineering actions and the definition of operational and maintenance requirements.</p>
+                <p class="lead lang-ru hidden">Анализ надёжности позволяет системно оценивать потенциальные отказы оборудования, их причины и последствия. Результаты анализа помогают принимать обоснованные проектные решения, определять приоритеты технических мероприятий и формировать требования к эксплуатации и обслуживанию.</p>
             </div>
             <img class="photo" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="Electronic engineering analysis">
         </div>
@@ -214,96 +213,101 @@
             <div class="cards">
                 <div class="card">
                     <div class="number">01 / FMEA & FMECA</div>
-                    <h3>FMEA / FMECA</h3>
+                    <h3 class="lang-en">FMEA / FMECA</h3>
+                    <h3 class="lang-ru hidden">FMEA / FMECA</h3>
                     <p class="lang-en">Identification of equipment functions and potential failure modes, analysis of causes and local and end effects, criticality assessment and recommendations.</p>
                     <p class="lang-ru hidden">Идентификация функций оборудования и потенциальных видов отказов, анализ причин, локальных и конечных последствий, оценка критичности и разработка рекомендаций.</p>
                 </div>
                 <div class="card">
-                    <div class="number">02 / HARDWARE AND SOFTWARE INRETACTION ANALYSIS</div>
-                    <h3>Hardware and Software Interaction Analysis</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <div class="number">02 / HARDWARE AND SOFTWARE INTERACTION ANALYSIS</div>
+                    <h3 class="lang-en">Hardware and Software Interaction Analysis</h3>
+                    <h3 class="lang-ru hidden">Анализ взаимодействия ПО и оборудования</h3>
+                    <p class="lang-en">Identification of complex failure modes arising from the interaction between hardware and software components.</p>
+                    <p class="lang-ru hidden">Выявление сложных видов отказов, возникающих при взаимодействии аппаратных и программных компонентов.</p>
                 </div>
                 <div class="card">
                     <div class="number">03 / CONTINGENCY ANALYSIS</div>
-                    <h3>Contingency Analysis</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <h3 class="lang-en">Contingency Analysis</h3>
+                    <h3 class="lang-ru hidden">Анализ нештатных ситуаций</h3>
+                    <p class="lang-en">Assessment of system behavior and available recovery actions in the event of critical failures.</p>
+                    <p class="lang-ru hidden">Оценка поведения системы и доступных действий по восстановлению в случае критических отказов.</p>
                 </div>
                 <div class="card">
                     <div class="number">04 / FAULT TREE ANALYSIS</div>
-                    <h3>Fault Tree Analysis</h3>
+                    <h3 class="lang-en">Fault Tree Analysis</h3>
+                    <h3 class="lang-ru hidden">Анализ дерева отказов</h3>
                     <p class="lang-en">Development of system-level fault logic models and identification of event combinations that may lead to an undesired outcome.</p>
                     <p class="lang-ru hidden">Построение логических моделей отказов на уровне системы, определение комбинаций событий, которые могут привести к нежелательному результату.</p>
                 </div>
                 <div class="card">
-                    <div class="number">05 / COMMON-CAUSE ANAYSIS</div>
-                    <h3>Common-Cause Analysis</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <div class="number">05 / COMMON-CAUSE ANALYSIS</div>
+                    <h3 class="lang-en">Common-Cause Analysis</h3>
+                    <h3 class="lang-ru hidden">Анализ общих причин отказов</h3>
+                    <p class="lang-en">Identification of failures that can affect multiple components or redundant channels simultaneously.</p>
+                    <p class="lang-ru hidden">Выявление отказов, которые могут одновременно повлиять на несколько компонентов или резервных каналов.</p>
                 </div> 
                 <div class="card">
                     <div class="number">06 / RELIABILITY PREDICTION</div>
                     <h3 class="lang-en">Reliability Prediction</h3>
-                    <h3 class="lang-ru hidden">Оценка ВБР</h3>
+                    <h3 class="lang-ru hidden">Оценка вероятности безотказной работы</h3>
                     <p class="lang-en">Assessment of reliability based on system architecture, mission profile, operating conditions and available component data.</p>
-                    <p class="lang-ru hidden">Оценка ВБР на основе архитектуры системы, профиля миссии, условий эксплуатации и доступных данных о компонентах.</p>
+                    <p class="lang-ru hidden">Оценка вероятности безотказной работы на основе архитектуры системы, профиля миссии, условий эксплуатации и доступных данных о компонентах.</p>
                 </div>
                 <div class="card">
                     <div class="number">07 / WORST CASE ANALYSIS</div>
                     <h3 class="lang-en">Worst Case Analysis</h3>
                     <h3 class="lang-ru hidden">Анализ наихудшего случая</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <p class="lang-en">Evaluation of circuit performance under extreme operating conditions and component parameter variations.</p>
+                    <p class="lang-ru hidden">Оценка работы схемы в экстремальных условиях эксплуатации и при разбросе параметров компонентов.</p>
                 </div>
                 <div class="card">
                     <div class="number">08 / PART STRESS ANALYSIS</div>
                     <h3 class="lang-en">Part Stress Analysis</h3>
                     <h3 class="lang-ru hidden">Анализ нагрузок ЭРИ</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <p class="lang-en">Assessment of electrical, thermal, and mechanical stresses applied to components to ensure they remain within derating limits.</p>
+                    <p class="lang-ru hidden">Оценка электрических, тепловых и механических нагрузок на компоненты для обеспечения их работы в пределах допустимых значений.</p>
                 </div>
                 <div class="card">
                     <div class="number">09 / ZONAL ANALYSIS</div>
                     <h3 class="lang-en">Zonal Analysis</h3>
-                    <h3 class="lang-ru hidden">Анализ отдельных участков</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <h3 class="lang-ru hidden">Зональный анализ</h3>
+                    <p class="lang-en">Systematic review of physical zones of the spacecraft to identify potential hazards, such as contamination, thermal issues, or electromagnetic interference.</p>
+                    <p class="lang-ru hidden">Систематический анализ физических зон аппарата для выявления потенциальных опасностей, таких как загрязнение, тепловые проблемы или электромагнитные помехи.</p>
                 </div>
                 <div class="card">
-                    <div class="number">10/ FAILURE DETECTION, ISOLATION AND RECOVERY</div>
+                    <div class="number">10 / FAILURE DETECTION, ISOLATION AND RECOVERY</div>
                     <h3 class="lang-en">Failure Detection, Isolation and Recovery</h3>
                     <h3 class="lang-ru hidden">Обнаружение, локализация и восстановление после отказов</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <p class="lang-en">Design and analysis of FDIR concepts to ensure autonomous system recovery and mission safety.</p>
+                    <p class="lang-ru hidden">Проектирование и анализ концепций FDIR для обеспечения автономного восстановления системы и безопасности миссии.</p>
                 </div>
                 <div class="card">
-                    <div class="number">11/ MAINTAINABILITY ANALYSIS</div>
+                    <div class="number">11 / MAINTAINABILITY ANALYSIS</div>
                     <h3 class="lang-en">Maintainability Analysis</h3>
-                    <h3 class="lang-ru hidden">Анализ технического обслуживания</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <h3 class="lang-ru hidden">Анализ ремонтопригодности</h3>
+                    <p class="lang-en">Assessment of maintenance tasks, required resources, and downtime to ensure the system can be effectively serviced.</p>
+                    <p class="lang-ru hidden">Оценка задач технического обслуживания, необходимых ресурсов и времени простоя для обеспечения эффективного сервиса системы.</p>
                 </div>
                 <div class="card">
-                    <div class="number">12/ AVAILABILITY ANALYSIS</div>
+                    <div class="number">12 / AVAILABILITY ANALYSIS</div>
                     <h3 class="lang-en">Availability Analysis</h3>
                     <h3 class="lang-ru hidden">Анализ коэффициента готовности</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <p class="lang-en">Calculation of system availability based on reliability and maintainability parameters, optimizing spares and logistics.</p>
+                    <p class="lang-ru hidden">Расчет коэффициента готовности системы на основе параметров надежности и ремонтопригодности, оптимизация ЗИП и логистики.</p>
                 </div>
                 <div class="card">
-                    <div class="number">13/ DEPENDABILITY CRITICAL ITEM LIST</div>
+                    <div class="number">13 / DEPENDABILITY CRITICAL ITEM LIST</div>
                     <h3 class="lang-en">Dependability Critical Item List</h3>
-                    <h3 class="lang-ru hidden">Перечнь критичных элементов обеспечения надежности</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <h3 class="lang-ru hidden">Перечень критичных элементов надежности</h3>
+                    <p class="lang-en">Compilation of items that have a significant impact on system reliability, safety, or mission success.</p>
+                    <p class="lang-ru hidden">Составление перечня элементов, оказывающих существенное влияние на надежность, безопасность или успех миссии.</p>
                 </div>
                 <div class="card">
-                    <div class="number">14/ DEPENDABILITY PLAN</div>
+                    <div class="number">14 / DEPENDABILITY PLAN</div>
                     <h3 class="lang-en">Dependability Plan</h3>
                     <h3 class="lang-ru hidden">План обеспечения надежности</h3>
-                    <p class="lang-en">TO WRITE</p>
-                    <p class="lang-ru hidden">НАПИСАТЬ</p>
+                    <p class="lang-en">Document defining the strategy, tasks, and schedule for achieving the required reliability and safety goals.</p>
+                    <p class="lang-ru hidden">Документ, определяющий стратегию, задачи и график для достижения требуемых целей по надежности и безопасности.</p>
                 </div>
             </div>
         </div>
